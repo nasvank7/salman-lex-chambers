@@ -15,7 +15,7 @@ const quickLinks = [
   { label: "About the Firm",  href: "#about" },
   { label: "Our Partners",    href: "#partners" },
   { label: "Practice Areas",  href: "#practice" },
-  { label: "Why Choose Us",   href: "#why-us" },
+  // { label: "Why Choose Us",   href: "#why-us" },
   { label: "Contact Us",      href: "#contact" },
 ];
 
