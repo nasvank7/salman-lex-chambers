@@ -20,8 +20,28 @@ export default function Contact() {
   const isInView = useInView(ref, { once: true, margin: "-80px" });
   const [formState, setFormState] = useState({ name: "", email: "", phone: "", matter: "", message: "" });
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
-  const handleSubmit = (e: React.FormEvent) => { e.preventDefault(); setSubmitted(true); };
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setLoading(true);
+    setError(null);
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formState),
+      });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error ?? "Something went wrong.");
+      setSubmitted(true);
+    } catch (err: unknown) {
+      setError(err instanceof Error ? err.message : "Something went wrong. Please try again.");
+    } finally {
+      setLoading(false);
+    }
+  };
 
   const inputClass =
     "w-full bg-[#0A1228] border border-[#283C50]/70 focus:border-[#617F98]/60 text-[#E8E2D9] placeholder-[#3D5263] px-4 py-3 text-sm outline-none transition-colors duration-300 font-light";
@@ -205,12 +225,17 @@ export default function Contact() {
                     All communications are strictly confidential and protected by attorney-client privilege.
                   </p>
 
+                  {error && (
+                    <p className="text-red-400 text-xs font-light">{error}</p>
+                  )}
+
                   <button
                     type="submit"
-                    className="group w-full py-4 bg-[#1B3D6E] text-[#E8E2D9] font-medium text-[10.5px] tracking-[0.28em] uppercase hover:bg-[#234E87] transition-all duration-500 flex items-center justify-center gap-3"
+                    disabled={loading}
+                    className="group w-full py-4 bg-[#1B3D6E] text-[#E8E2D9] font-medium text-[10.5px] tracking-[0.28em] uppercase hover:bg-[#234E87] disabled:opacity-60 disabled:cursor-not-allowed transition-all duration-500 flex items-center justify-center gap-3"
                   >
-                    Send Message
-                    <ChevronRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform duration-300" />
+                    {loading ? "Sending…" : "Send Message"}
+                    {!loading && <ChevronRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform duration-300" />}
                   </button>
                 </form>
               )}
