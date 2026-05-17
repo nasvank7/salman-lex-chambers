@@ -1,29 +1,42 @@
 "use client";
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { GraduationCap, Award, Scale } from "lucide-react";
+import { GraduationCap, Award, Scale, Briefcase, Building2 } from "lucide-react";
 import Image from "next/image";
 
 const partners = [
   {
     name: "Adv. Salman Pallikkadan",
-    role: "Founder Partner",
+    role: "Founder Partner | Advocate & Legal Consultant",
     image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=500&q=80",
+    degree: "B.A. LL.B.",
     education: "H.H. The Maharaja's Government Law College, Ernakulam",
-    enrollment: "Bar Council of Kerala",
+    enrollmentNo: "K/814/2020",
+    career: [
+      "Muhammed Siyad & Associates, Ernakulam",
+      "KVS Legal Associates, Manjeri",
+      "Legal Aid Defence Counsel, NALSA (2023 – 2025)",
+    ],
+    corporate: "Legal Advisor — Popees Baby Care Pvt. Ltd.",
     description:
-      "Adv. Salman Pallikkadan founded Salman Lex Chambers with a vision to deliver accessible, effective, and ethical legal representation. With expertise spanning criminal law, civil litigation, and corporate matters, he brings rigorous analytical thinking and courtroom acumen to every client engagement.",
-    specialties: ["Criminal Law", "Civil Litigation", "Corporate Matters"],
+      "Adv. Salman Pallikkadan is the Founder Partner of Salman Lex Chambers, enrolled with the Bar Council of Kerala in 2020. He holds a B.A. LL.B. from H.H. The Maharaja's Government Law College, Ernakulam. He began his career at Muhammed Siyad & Associates, Ernakulam, and later practised at KVS Legal Associates, Manjeri. He was subsequently selected as a Legal Aid Defence Counsel under NALSA, serving from 2023 to 2025, representing underprivileged accused in criminal trials. He established Salman Lex Chambers along with Adv. Aysha Latheef and serves as Legal Advisor to Popees Baby Care Private Limited.",
+    specialties: ["Criminal Law", "Civil Disputes", "Corporate & Commercial", "Family Law", "IPR Advisory & Litigation", "MACT", "Consumer Disputes"],
   },
   {
     name: "Adv. Aysha Latheef",
-    role: "Partner",
+    role: "Partner | Advocate & Legal Consultant",
     image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=500&q=80",
+    degree: "B.Com LL.B.",
     education: "H.H. The Maharaja's Government Law College, Ernakulam",
-    enrollment: "Bar Council of Kerala",
+    enrollmentNo: "K/1224/2022",
+    career: [
+      "KVS Legal Associates, Manjeri",
+      "Partner, Salman Lex Chambers",
+    ],
+    corporate: "Legal Support — Popees Baby Care Pvt. Ltd., Fragomen, Building Blocks Software Services Pvt. Ltd.",
     description:
-      "Adv. Aysha Latheef is a dedicated partner who brings deep expertise in family law, consumer disputes, and labour matters. Her empathetic approach and thorough legal preparation ensure that clients receive both sound counsel and compassionate support through challenging legal proceedings.",
-    specialties: ["Family Law", "Consumer Disputes", "Labour Matters"],
+      "Adv. Aysha Latheef is a Partner at Salman Lex Chambers, enrolled with the Bar Council of Kerala in 2022. She holds a B.Com LL.B. from H.H. The Maharaja's Government Law College, Ernakulam and brings professional experience in litigation, legal advisory, drafting, and consultancy across diverse areas of practice. She commenced her career at KVS Legal Associates, Manjeri, and subsequently joined Salman Lex Chambers as Partner. Alongside court practice, she has rendered corporate legal support to Popees Baby Care Private Limited, Fragomen, and Building Blocks Software Services Private Limited.",
+    specialties: ["Family Law", "Corporate & Commercial", "IPR Advisory & Litigation", "Criminal Law", "Civil Disputes", "MACT", "Consumer Disputes"],
   },
 ];
 
@@ -134,11 +147,25 @@ export default function Partners() {
                   <div className="flex flex-col gap-2 mb-5">
                     <div className="flex items-start gap-2.5">
                       <GraduationCap className="w-3.5 h-3.5 text-[#7A94A8] mt-0.5 flex-shrink-0" />
-                      <p className="text-[#617F98] text-xs font-light leading-snug">{partner.education}</p>
+                      <p className="text-[#617F98] text-xs font-light leading-snug">
+                        {partner.degree} &mdash; {partner.education}
+                      </p>
                     </div>
                     <div className="flex items-center gap-2.5">
                       <Award className="w-3.5 h-3.5 text-[#7A94A8] flex-shrink-0" />
-                      <p className="text-[#617F98] text-xs font-light">{partner.enrollment}</p>
+                      <p className="text-[#617F98] text-xs font-light">
+                        Bar Council of Kerala &mdash; Enrl. No. {partner.enrollmentNo}
+                      </p>
+                    </div>
+                    <div className="flex items-start gap-2.5">
+                      <Briefcase className="w-3.5 h-3.5 text-[#7A94A8] mt-0.5 flex-shrink-0" />
+                      <p className="text-[#617F98] text-xs font-light leading-snug">
+                        {partner.career.join(" → ")}
+                      </p>
+                    </div>
+                    <div className="flex items-start gap-2.5">
+                      <Building2 className="w-3.5 h-3.5 text-[#7A94A8] mt-0.5 flex-shrink-0" />
+                      <p className="text-[#617F98] text-xs font-light leading-snug">{partner.corporate}</p>
                     </div>
                   </div>
 

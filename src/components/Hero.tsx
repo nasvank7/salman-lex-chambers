@@ -76,11 +76,12 @@ export default function Hero() {
           transition={{ duration: 1.2, delay: 0.35, ease: [0.22, 1, 0.36, 1] }}
           className="leading-[0.9] tracking-wide mb-6"
           style={{
-            fontFamily: "'Zynzal', 'Cormorant Garamond', Georgia, serif",
+            fontFamily: "var(--font-cinzel-var), 'Cinzel', Georgia, serif",
             fontWeight: 700,
             fontStyle: "normal",
-            fontSize: "clamp(3.2rem, 10vw, 8.5rem)",
+            fontSize: "clamp(2.8rem, 9vw, 7.5rem)",
             color: "#E8E2D9",
+            letterSpacing: "0.04em",
           }}
         >
           Salman Lex

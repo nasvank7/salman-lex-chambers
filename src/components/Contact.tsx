@@ -8,7 +8,7 @@ const contactInfo = [
     icon: MapPin,
     label: "Office Address",
     value: "2nd Floor, Pallikkadan Building,\nOpposite Seethi Haji Bus Stand,\nPandikkad Road, Manjeri — 676121",
-    link: "https://maps.google.com/?q=Manjeri,Malappuram,Kerala",
+    link: "https://maps.app.goo.gl/3Kh4ibzDdYuNBNWJA",
   },
   { icon: Phone, label: "Phone / WhatsApp", value: "+91 7306647233",               link: "tel:+917306647233" },
   { icon: Mail,  label: "Email",            value: "salmanlexchambers@gmail.com",   link: "mailto:salmanlexchambers@gmail.com" },
@@ -264,7 +264,7 @@ export default function Contact() {
             >
               <iframe
                 title="Salman Lex Chambers Location"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31399.45!2d76.119!3d11.12!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba645c0eb851a5f%3A0x95b85a41b7a2cfce!2sManjeri%2C%20Kerala!5e0!3m2!1sen!2sin!4v1"
+                src="https://maps.google.com/maps?q=Pallikkadan+Building,Pandikkad+Road,Manjeri,Kerala+676121&output=embed&z=16"
                 width="100%"
                 height="190"
                 style={{ border: 0, filter: "grayscale(100%) invert(90%) contrast(85%)" }}

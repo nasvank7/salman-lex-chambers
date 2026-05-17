@@ -5,10 +5,11 @@ import { MapPin, Award } from "lucide-react";
 import Image from "next/image";
 
 const highlights = [
-  "Founded on principles of integrity, diligence, and client-first service",
-  "Enrolled with the Bar Council of Kerala",
-  "Alumni of H.H. The Maharaja's Government Law College, Ernakulam",
-  "Serving courts and legal authorities across Malappuram and beyond",
+  "Led by Adv. Salman Pallikkadan (Founder Partner) and Adv. Aysha Latheef (Partner)",
+  "Both alumni of H.H. The Maharaja's Government Law College, Ernakulam",
+  "Enrolled with the Bar Council of Kerala — Advocates Act, 1961",
+  "Practice before courts, tribunals, and statutory authorities across Kerala",
+  "Operating in adherence to the rules of the Bar Council of India",
 ];
 
 const stats = [
@@ -74,15 +75,22 @@ export default function About() {
               className="space-y-4 text-[#7A94A8] text-sm leading-relaxed mb-9 font-light"
             >
               <p>
-                <span className="text-[#CDD8E0] font-normal">Salman Lex Chambers</span> is a
-                full-service law office situated at Manjeri, Malappuram District, Kerala. The firm
-                is dedicated to providing comprehensive legal assistance, litigation support, and
-                consultancy services before courts and legal authorities.
+                <span className="text-[#CDD8E0] font-normal">Salman Lex Chambers</span>,
+                Advocates &amp; Legal Consultants, is a full-service law office based at Manjeri,
+                Malappuram District, engaged in providing legal representation, litigation
+                assistance, and professional legal consultancy before courts, tribunals, and
+                statutory authorities across the State of Kerala.
               </p>
               <p>
-                With a client-centric approach and unwavering commitment to professional ethics,
-                the firm brings together sharp legal acumen and compassionate advocacy to navigate
-                complex legal challenges across diverse practice areas.
+                The firm&apos;s practice encompasses criminal law, family and matrimonial matters,
+                intellectual property advisory, civil litigation, corporate and commercial matters,
+                consumer disputes, rent control proceedings, labour and service matters, motor
+                accident claims (MACT), contract drafting, documentation, and compliance advisory.
+              </p>
+              <p>
+                Salman Lex Chambers functions with an emphasis on professional integrity,
+                confidentiality, and strict adherence to the ethical standards prescribed under
+                the Advocates Act, 1961 and the rules of the Bar Council of India.
               </p>
             </motion.div>
 

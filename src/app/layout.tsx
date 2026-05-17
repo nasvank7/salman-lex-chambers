@@ -1,7 +1,14 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond, Inter } from "next/font/google";
+import { Cinzel, Cormorant_Garamond, Inter } from "next/font/google";
 import "./globals.css";
 import DisclaimerModal from "@/src/components/DisclaimerModal";
+
+const cinzel = Cinzel({
+  subsets: ["latin"],
+  variable: "--font-cinzel-var",
+  display: "swap",
+  weight: ["400", "700", "900"],
+});
 
 const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
@@ -38,7 +45,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${cormorant.variable} ${inter.variable}`}>
+    <html lang="en" className={`${cinzel.variable} ${cormorant.variable} ${inter.variable}`}>
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
       </head>

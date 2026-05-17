@@ -19,6 +19,11 @@ const quickLinks = [
   { label: "Contact Us",      href: "#contact" },
 ];
 
+const opportunityLinks = [
+  { label: "Career @ Salman Lex Chambers",     href: "mailto:salmanlexchambers@gmail.com?subject=Career%20Application%20%E2%80%94%20Salman%20Lex%20Chambers" },
+  { label: "Internship @ Salman Lex Chambers", href: "mailto:salmanlexchambers@gmail.com?subject=Internship%20Application%20%E2%80%94%20Salman%20Lex%20Chambers" },
+];
+
 export default function Footer() {
   const scrollTop  = () => window.scrollTo({ top: 0, behavior: "smooth" });
   const handleNav  = (href: string) => document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
@@ -30,7 +35,7 @@ export default function Footer() {
         {/* Top silver rule */}
         <div className="h-px bg-gradient-to-r from-transparent via-[#617F98]/20 to-transparent mb-14" />
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-8">
 
           {/* Brand column */}
           <div className="sm:col-span-2 lg:col-span-2">
@@ -65,11 +70,28 @@ export default function Footer() {
             </p>
 
             {/* Status indicator */}
-            <div className="inline-flex items-center gap-2.5 px-4 py-2.5 border border-[#283C50]/50">
+            <div className="inline-flex items-center gap-2.5 px-4 py-2.5 border border-[#283C50]/50 mb-5">
               <div className="w-1.5 h-1.5 rounded-full bg-[#617F98] animate-pulse" />
               <span className="text-[#617F98] text-[9px] tracking-[0.28em] uppercase font-light">
                 Accepting New Clients
               </span>
+            </div>
+
+            {/* Social links */}
+            <div className="flex items-center gap-3">
+              <a
+                href="https://www.instagram.com/adv.salman_pallikkadan?igsh=NTU4ajFoMjdhcmQ1"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-8 h-8 flex items-center justify-center border border-[#283C50]/60 hover:border-[#617F98]/50 text-[#617F98] hover:text-[#8AA4BA] transition-all duration-400"
+                aria-label="Instagram"
+              >
+                <svg viewBox="0 0 24 24" className="w-3.5 h-3.5" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round">
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                    <circle cx="12" cy="12" r="4" />
+                    <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none" />
+                  </svg>
+              </a>
             </div>
           </div>
 
@@ -106,6 +128,25 @@ export default function Footer() {
                   >
                     {area}
                   </button>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Opportunities */}
+          <div>
+            <h4 className="text-[#CDD8E0] text-[9px] tracking-[0.32em] uppercase mb-6 font-normal">
+              Opportunities
+            </h4>
+            <ul className="space-y-3.5">
+              {opportunityLinks.map((link) => (
+                <li key={link.label}>
+                  <a
+                    href={link.href}
+                    className="text-[#617F98] hover:text-[#8AA4BA] text-xs font-light transition-colors duration-400 leading-relaxed block"
+                  >
+                    {link.label}
+                  </a>
                 </li>
               ))}
             </ul>

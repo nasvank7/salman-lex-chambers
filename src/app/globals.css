@@ -1,15 +1,5 @@
 @import "tailwindcss";
 
-/* Zynzal Bold — drop Zynzal-Bold.woff2 (and optionally .woff / .ttf) into /public/fonts/ */
-@font-face {
-  font-family: "Zynzal";
-  src: url("/fonts/Zynzal-Bold.woff2") format("woff2"),
-       url("/fonts/Zynzal-Bold.woff")  format("woff"),
-       url("/fonts/Zynzal-Bold.ttf")   format("truetype");
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
 
 @theme {
   /* Darkness scale */
