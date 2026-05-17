@@ -1,206 +1,136 @@
 "use client";
 import { useRef } from "react";
-import { motion, useInView, type Variants } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import {
-  Shield,
-  Users,
-  Gavel,
-  Briefcase,
-  ShoppingBag,
-  Home,
-  Hammer,
-  Car,
-  BookOpen,
-  FileText,
-  Lightbulb,
-  Scale,
+  Shield, Users, Gavel, Briefcase, ShoppingBag, Home,
+  Hammer, Car, BookOpen, FileText, Lightbulb, Scale,
 } from "lucide-react";
 
 const practices = [
-  {
-    icon: Shield,
-    title: "Criminal Law",
-    description:
-      "Robust defense and prosecution representation in criminal matters before sessions and high courts.",
-  },
-  {
-    icon: Users,
-    title: "Family Disputes",
-    description:
-      "Sensitive handling of matrimonial cases, maintenance, child custody, and inheritance disputes.",
-  },
-  {
-    icon: Gavel,
-    title: "Civil Litigation",
-    description:
-      "Comprehensive representation in civil suits, injunctions, property matters, and appeals.",
-  },
-  {
-    icon: Briefcase,
-    title: "Corporate & Commercial",
-    description:
-      "Legal support for businesses covering contracts, disputes, regulatory compliance, and commercial litigation.",
-  },
-  {
-    icon: ShoppingBag,
-    title: "Consumer Disputes",
-    description:
-      "Advocacy before consumer forums for product liability, deficiency in service, and unfair trade practices.",
-  },
-  {
-    icon: Home,
-    title: "Rent Control Proceedings",
-    description:
-      "Expert guidance in tenancy disputes, eviction proceedings, and rent control tribunal matters.",
-  },
-  {
-    icon: Hammer,
-    title: "Labour & Service Matters",
-    description:
-      "Representation in employment disputes, industrial tribunals, and service law cases for employees and employers.",
-  },
-  {
-    icon: Car,
-    title: "Motor Accident Claims",
-    description:
-      "Efficient processing of MACT claims, insurance disputes, and compensation recovery for accident victims.",
-  },
-  {
-    icon: BookOpen,
-    title: "Legal Advisory",
-    description:
-      "Strategic legal opinions and advisory services tailored to your personal, commercial, or regulatory needs.",
-  },
-  {
-    icon: FileText,
-    title: "Document Drafting & Vetting",
-    description:
-      "Precise drafting and review of agreements, deeds, MoUs, wills, and all legal instruments.",
-  },
-  {
-    icon: Lightbulb,
-    title: "Professional Consultancy",
-    description:
-      "Expert consultation for individuals and organizations navigating complex legal landscapes in Kerala.",
-  },
-  {
-    icon: Scale,
-    title: "Property & Real Estate",
-    description:
-      "Title verification, property disputes, registration matters, and real estate transaction advisory.",
-  },
+  { icon: Shield,      num: "01", title: "Criminal Law",               description: "Robust defense and prosecution representation in criminal matters before sessions and high courts." },
+  { icon: Users,       num: "02", title: "Family Disputes",            description: "Sensitive handling of matrimonial cases, maintenance, child custody, and inheritance disputes." },
+  { icon: Gavel,       num: "03", title: "Civil Litigation",           description: "Comprehensive representation in civil suits, injunctions, property matters, and appeals." },
+  { icon: Briefcase,   num: "04", title: "Corporate & Commercial",     description: "Legal support for businesses covering contracts, disputes, regulatory compliance, and commercial litigation." },
+  { icon: ShoppingBag, num: "05", title: "Consumer Disputes",          description: "Advocacy before consumer forums for product liability, deficiency in service, and unfair trade practices." },
+  { icon: Home,        num: "06", title: "Rent Control Proceedings",   description: "Expert guidance in tenancy disputes, eviction proceedings, and rent control tribunal matters." },
+  { icon: Hammer,      num: "07", title: "Labour & Service Matters",   description: "Representation in employment disputes, industrial tribunals, and service law cases." },
+  { icon: Car,         num: "08", title: "Motor Accident Claims",      description: "Efficient processing of MACT claims, insurance disputes, and compensation recovery for accident victims." },
+  { icon: BookOpen,    num: "09", title: "Legal Advisory",             description: "Strategic legal opinions and advisory services tailored to your personal, commercial, or regulatory needs." },
+  { icon: FileText,    num: "10", title: "Document Drafting & Vetting",description: "Precise drafting and review of agreements, deeds, MoUs, wills, and all legal instruments." },
+  { icon: Lightbulb,   num: "11", title: "Professional Consultancy",   description: "Expert consultation for individuals and organizations navigating complex legal landscapes in Kerala." },
+  { icon: Scale,       num: "12", title: "Property & Real Estate",     description: "Title verification, property disputes, registration matters, and real estate transaction advisory." },
 ];
-
-const containerVariants: Variants = {
-  hidden: {},
-  visible: {
-    transition: {
-      staggerChildren: 0.07,
-    },
-  },
-};
-
-const cardVariants: Variants = {
-  hidden: { opacity: 0, y: 40 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.25, 0.1, 0.25, 1] } },
-};
 
 export default function PracticeAreas() {
   const ref = useRef<HTMLDivElement>(null);
-  const isInView = useInView(ref, { once: true, margin: "-80px" });
+  const isInView = useInView(ref, { once: true, margin: "-60px" });
 
   return (
-    <section
-      id="practice"
-      className="section-padding bg-dark-secondary relative overflow-hidden"
-    >
-      {/* Pattern overlay */}
-      <div
-        className="absolute inset-0 opacity-[0.015] pointer-events-none"
-        style={{
-          backgroundImage:
-            "repeating-linear-gradient(0deg, #C9A84C 0px, #C9A84C 1px, transparent 1px, transparent 60px), repeating-linear-gradient(90deg, #C9A84C 0px, #C9A84C 1px, transparent 1px, transparent 60px)",
-        }}
-      />
+    <section id="practice" className="section-padding bg-[#0A1228] relative overflow-hidden">
+      <div className="max-w-7xl mx-auto px-6 lg:px-10" ref={ref}>
 
-      <div className="max-w-7xl mx-auto px-6 lg:px-8" ref={ref}>
         {/* Section header */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 28 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.7 }}
-          className="text-center mb-16"
+          transition={{ duration: 0.8 }}
+          className="mb-16 lg:mb-20"
         >
-          <p className="text-[#C9A84C] text-sm tracking-[0.3em] uppercase mb-4">
+          <p className="text-[#617F98] text-[9px] tracking-[0.42em] uppercase mb-5 font-light">
             What We Do
           </p>
-          <h2
-            className="text-4xl md:text-5xl font-bold text-white mb-4"
-            style={{ fontFamily: "var(--font-playfair-var), serif" }}
-          >
-            Our Practice Areas
-          </h2>
-          <div className="gold-divider mx-auto mb-6" />
-          <p className="text-gray-400 max-w-2xl mx-auto text-base">
-            Comprehensive legal services covering every domain of law — from individual needs
-            to corporate requirements, handled with precision and dedication.
+          <div className="flex items-end gap-8">
+            <h2
+              className="font-light italic leading-[0.9] tracking-tight text-[#E8E2D9]"
+              style={{
+                fontFamily: "var(--font-cormorant-var), Georgia, serif",
+                fontSize: "clamp(2.6rem, 5vw, 4rem)",
+              }}
+            >
+              Our Practice
+              <br />
+              <span
+                className="not-italic font-semibold"
+                style={{
+                  background: "linear-gradient(135deg, #8AA4BA 0%, #CDD8E0 48%, #A5BCC8 100%)",
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                  backgroundClip: "text",
+                }}
+              >
+                Areas
+              </span>
+            </h2>
+            <div className="hidden sm:block flex-1 h-px bg-gradient-to-r from-[#283C50]/80 to-transparent mb-2" />
+          </div>
+          <p className="text-[#617F98] text-sm font-light leading-relaxed max-w-xl mt-6">
+            Comprehensive legal services covering every domain of law — from individual needs to
+            corporate requirements, handled with precision and dedication.
           </p>
         </motion.div>
 
-        {/* Cards Grid */}
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          animate={isInView ? "visible" : "hidden"}
-          className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 sm:gap-4"
-        >
-          {practices.map((practice) => {
+        {/* Numbered list grid */}
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-0">
+          {practices.map((practice, i) => {
             const Icon = practice.icon;
             return (
               <motion.div
                 key={practice.title}
-                variants={cardVariants}
-                className="group bg-dark-card border border-[#2a2a2a] hover:border-[#C9A84C]/50 p-4 sm:p-6 cursor-default transition-all duration-400 hover:bg-[#111111] relative overflow-hidden"
+                initial={{ opacity: 0, y: 32 }}
+                animate={isInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.6, delay: i * 0.055, ease: [0.22, 1, 0.36, 1] }}
+                className="group relative border-b border-r border-[#283C50]/40 p-6 sm:p-7 cursor-default overflow-hidden hover:bg-[#0E1A35]/60 transition-all duration-400"
               >
-                {/* Hover gold glow */}
-                <div className="absolute inset-0 bg-gradient-to-br from-[#C9A84C]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-400 pointer-events-none" />
+                {/* Left silver reveal bar */}
+                <div className="absolute left-0 top-0 bottom-0 w-0.5 bg-gradient-to-b from-transparent via-[#617F98]/0 to-transparent group-hover:via-[#617F98]/50 transition-all duration-500" />
 
-                {/* Icon */}
-                <div className="w-9 h-9 sm:w-12 sm:h-12 rounded-sm bg-[#C9A84C]/10 border border-[#C9A84C]/20 flex items-center justify-center mb-3 sm:mb-5 group-hover:bg-[#C9A84C]/20 group-hover:border-[#C9A84C]/40 transition-all duration-300">
-                  <Icon className="w-4 h-4 sm:w-5 sm:h-5 text-[#C9A84C]" />
+                {/* Number */}
+                <span
+                  className="block text-[#1E2E42] font-light mb-4 leading-none select-none"
+                  style={{
+                    fontFamily: "var(--font-cormorant-var), Georgia, serif",
+                    fontSize: "2.8rem",
+                  }}
+                >
+                  {practice.num}
+                </span>
+
+                {/* Icon + title */}
+                <div className="flex items-center gap-3 mb-3">
+                  <Icon className="w-4 h-4 text-[#7A94A8] group-hover:text-[#CDD8E0] transition-colors duration-400 flex-shrink-0" />
+                  <h3
+                    className="text-[#CDD8E0] text-sm font-medium group-hover:text-[#E8E2D9] transition-colors duration-400 leading-tight"
+                    style={{ fontFamily: "var(--font-cormorant-var), Georgia, serif", fontSize: "1.05rem" }}
+                  >
+                    {practice.title}
+                  </h3>
                 </div>
 
-                <h3
-                  className="text-white text-sm sm:text-base font-semibold mb-1.5 sm:mb-2 group-hover:text-[#C9A84C] transition-colors duration-300 leading-tight"
-                  style={{ fontFamily: "var(--font-playfair-var), serif" }}
-                >
-                  {practice.title}
-                </h3>
-
-                <p className="text-gray-400 text-xs sm:text-sm leading-relaxed line-clamp-3 hidden sm:block">
+                {/* Description — shown on hover on desktop, always on mobile */}
+                <p className="text-[#617F98] text-xs leading-relaxed font-light opacity-0 group-hover:opacity-100 sm:block hidden transition-all duration-500 max-h-0 group-hover:max-h-24 overflow-hidden">
                   {practice.description}
                 </p>
-
-                {/* Bottom accent line on hover */}
-                <div className="absolute bottom-0 left-0 h-0.5 w-0 bg-gradient-to-r from-[#C9A84C] to-[#E8D5A3] group-hover:w-full transition-all duration-500" />
+                <p className="text-[#617F98] text-xs leading-relaxed font-light sm:hidden">
+                  {practice.description}
+                </p>
               </motion.div>
             );
           })}
-        </motion.div>
+        </div>
 
-        {/* Bottom CTA */}
+        {/* CTA */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ delay: 0.9 }}
           className="text-center mt-14"
         >
-          <p className="text-gray-400 mb-5 text-sm">
+          <p className="text-[#617F98] text-xs font-light mb-6 tracking-wide">
             Not sure which practice area covers your matter?
           </p>
           <button
             onClick={() => document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth" })}
-            className="px-8 py-3.5 bg-[#C9A84C] text-black text-sm font-bold tracking-widest uppercase hover:bg-[#E8D5A3] transition-all duration-300"
+            className="px-10 py-4 border border-[#435C72]/50 text-[#8AA4BA] text-[10.5px] tracking-[0.28em] uppercase font-light hover:border-[#8AA4BA]/60 hover:text-[#CDD8E0] hover:bg-[#8AA4BA]/5 transition-all duration-500"
           >
             Speak to an Advocate
           </button>

@@ -7,118 +7,117 @@ const contactInfo = [
   {
     icon: MapPin,
     label: "Office Address",
-    value: "Manjeri, Malappuram District,\nKerala, India",
+    value: "2nd Floor, Pallikkadan Building,\nOpposite Seethi Haji Bus Stand,\nPandikkad Road, Manjeri — 676121",
     link: "https://maps.google.com/?q=Manjeri,Malappuram,Kerala",
   },
-  {
-    icon: Phone,
-    label: "Phone",
-    value: "+91 00000 00000",
-    link: "tel:+910000000000",
-  },
-  {
-    icon: Mail,
-    label: "Email",
-    value: "info@salmanlex.in",
-    link: "mailto:info@salmanlex.in",
-  },
-  {
-    icon: Clock,
-    label: "Office Hours",
-    value: "Monday – Saturday\n9:00 AM – 6:00 PM",
-    link: null,
-  },
+  { icon: Phone, label: "Phone / WhatsApp", value: "+91 7306647233",               link: "tel:+917306647233" },
+  { icon: Mail,  label: "Email",            value: "salmanlexchambers@gmail.com",   link: "mailto:salmanlexchambers@gmail.com" },
+  { icon: Clock, label: "Office Hours",     value: "Monday – Saturday\n9:00 AM – 6:00 PM", link: null },
 ];
 
 export default function Contact() {
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true, margin: "-80px" });
-  const [formState, setFormState] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    matter: "",
-    message: "",
-  });
+  const [formState, setFormState] = useState({ name: "", email: "", phone: "", matter: "", message: "" });
   const [submitted, setSubmitted] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setSubmitted(true);
-  };
+  const handleSubmit = (e: React.FormEvent) => { e.preventDefault(); setSubmitted(true); };
 
   const inputClass =
-    "w-full bg-[#0f0f0f] border border-[#2a2a2a] focus:border-[#C9A84C] text-white placeholder-gray-600 px-4 py-3 text-sm outline-none transition-colors duration-300";
+    "w-full bg-[#0A1228] border border-[#283C50]/70 focus:border-[#617F98]/60 text-[#E8E2D9] placeholder-[#3D5263] px-4 py-3 text-sm outline-none transition-colors duration-300 font-light";
 
   return (
-    <section id="contact" className="section-padding bg-dark-secondary relative overflow-hidden">
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-24 bg-gradient-to-b from-transparent to-[#C9A84C]/40" />
+    <section id="contact" className="section-padding bg-[#060C1A] relative overflow-hidden">
+      {/* Top separator */}
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#617F98]/20 to-transparent" />
 
-      <div className="max-w-7xl mx-auto px-6 lg:px-8" ref={ref}>
+      <div className="max-w-7xl mx-auto px-6 lg:px-10" ref={ref}>
+
         {/* Section header */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 28 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.7 }}
-          className="text-center mb-16"
+          transition={{ duration: 0.8 }}
+          className="mb-16 lg:mb-20"
         >
-          <p className="text-[#C9A84C] text-sm tracking-[0.3em] uppercase mb-4">
+          <p className="text-[#617F98] text-[9px] tracking-[0.42em] uppercase mb-5 font-light">
             Get in Touch
           </p>
-          <h2
-            className="text-4xl md:text-5xl font-bold text-white mb-4"
-            style={{ fontFamily: "var(--font-playfair-var), serif" }}
-          >
-            Schedule a Consultation
-          </h2>
-          <div className="gold-divider mx-auto mb-6" />
-          <p className="text-gray-400 max-w-xl mx-auto text-base">
-            Reach out to us for confidential legal advice. Our team will respond promptly
-            and schedule a consultation at your earliest convenience.
+          <div className="flex items-end gap-8">
+            <h2
+              className="font-light italic leading-[0.9] tracking-tight text-[#E8E2D9]"
+              style={{
+                fontFamily: "var(--font-cormorant-var), Georgia, serif",
+                fontSize: "clamp(2.6rem, 5vw, 4rem)",
+              }}
+            >
+              Schedule a
+              <br />
+              <span
+                className="not-italic font-semibold"
+                style={{
+                  background: "linear-gradient(135deg, #8AA4BA 0%, #CDD8E0 48%, #A5BCC8 100%)",
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                  backgroundClip: "text",
+                }}
+              >
+                Consultation
+              </span>
+            </h2>
+            <div className="hidden sm:block flex-1 h-px bg-gradient-to-r from-[#283C50]/80 to-transparent mb-2" />
+          </div>
+          <p className="text-[#617F98] text-sm font-light leading-relaxed max-w-xl mt-6">
+            Reach out for confidential legal advice. Our team will respond promptly and schedule
+            a consultation at your earliest convenience.
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-5 gap-6 lg:gap-10">
-          {/* Contact Form */}
+        <div className="grid lg:grid-cols-5 gap-8 lg:gap-12">
+
+          {/* Form — 3 cols */}
           <motion.div
-            initial={{ opacity: 0, x: -40 }}
+            initial={{ opacity: 0, x: -32 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.7, delay: 0.2 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
             className="lg:col-span-3"
           >
-            <div className="bg-dark-card border border-[#2a2a2a] p-5 sm:p-8">
+            <div className="bg-[#0A1228] border border-[#283C50]/60 p-6 sm:p-8">
+              {/* Card top silver line */}
+              <div className="h-px w-full bg-gradient-to-r from-transparent via-[#617F98]/30 to-transparent mb-8" />
+
               <h3
-                className="text-xl font-semibold text-white mb-6"
-                style={{ fontFamily: "var(--font-playfair-var), serif" }}
+                className="text-[#CDD8E0] font-medium mb-7 leading-tight"
+                style={{ fontFamily: "var(--font-cormorant-var), Georgia, serif", fontSize: "1.3rem" }}
               >
                 Send Us a Message
               </h3>
 
               {submitted ? (
                 <motion.div
-                  initial={{ opacity: 0, scale: 0.95 }}
+                  initial={{ opacity: 0, scale: 0.96 }}
                   animate={{ opacity: 1, scale: 1 }}
-                  className="text-center py-12"
+                  className="text-center py-14"
                 >
-                  <div className="w-16 h-16 rounded-full bg-[#C9A84C]/10 border border-[#C9A84C]/30 flex items-center justify-center mx-auto mb-4">
-                    <Send className="w-7 h-7 text-[#C9A84C]" />
+                  <div className="w-14 h-14 border border-[#617F98]/30 flex items-center justify-center mx-auto mb-5">
+                    <Send className="w-5 h-5 text-[#617F98]" />
                   </div>
                   <h4
-                    className="text-white text-xl font-semibold mb-2"
-                    style={{ fontFamily: "var(--font-playfair-var), serif" }}
+                    className="text-[#E8E2D9] font-medium mb-3"
+                    style={{ fontFamily: "var(--font-cormorant-var), Georgia, serif", fontSize: "1.4rem" }}
                   >
                     Message Sent
                   </h4>
-                  <p className="text-gray-400 text-sm">
-                    Thank you for reaching out. We will contact you within 24 hours to
-                    schedule your consultation.
+                  <p className="text-[#617F98] text-sm font-light">
+                    Thank you for reaching out. We will contact you within 24 hours to schedule
+                    your consultation.
                   </p>
                 </motion.div>
               ) : (
-                <form onSubmit={handleSubmit} className="space-y-4">
-                  <div className="grid sm:grid-cols-2 gap-4">
+                <form onSubmit={handleSubmit} className="space-y-5">
+                  <div className="grid sm:grid-cols-2 gap-5">
                     <div>
-                      <label className="text-xs text-gray-500 uppercase tracking-widest mb-2 block">
+                      <label className="text-[#7A94A8] text-[9px] tracking-[0.28em] uppercase mb-2 block font-light">
                         Full Name *
                       </label>
                       <input
@@ -131,7 +130,7 @@ export default function Contact() {
                       />
                     </div>
                     <div>
-                      <label className="text-xs text-gray-500 uppercase tracking-widest mb-2 block">
+                      <label className="text-[#7A94A8] text-[9px] tracking-[0.28em] uppercase mb-2 block font-light">
                         Email Address *
                       </label>
                       <input
@@ -144,9 +143,10 @@ export default function Contact() {
                       />
                     </div>
                   </div>
-                  <div className="grid sm:grid-cols-2 gap-4">
+
+                  <div className="grid sm:grid-cols-2 gap-5">
                     <div>
-                      <label className="text-xs text-gray-500 uppercase tracking-widest mb-2 block">
+                      <label className="text-[#7A94A8] text-[9px] tracking-[0.28em] uppercase mb-2 block font-light">
                         Phone Number
                       </label>
                       <input
@@ -158,7 +158,7 @@ export default function Contact() {
                       />
                     </div>
                     <div>
-                      <label className="text-xs text-gray-500 uppercase tracking-widest mb-2 block">
+                      <label className="text-[#7A94A8] text-[9px] tracking-[0.28em] uppercase mb-2 block font-light">
                         Legal Matter
                       </label>
                       <select
@@ -166,41 +166,22 @@ export default function Contact() {
                         onChange={(e) => setFormState({ ...formState, matter: e.target.value })}
                         className={`${inputClass} cursor-pointer`}
                       >
-                        <option value="" className="bg-[#0f0f0f]">
-                          Select area of law
-                        </option>
-                        <option value="criminal" className="bg-[#0f0f0f]">
-                          Criminal Law
-                        </option>
-                        <option value="family" className="bg-[#0f0f0f]">
-                          Family Disputes
-                        </option>
-                        <option value="civil" className="bg-[#0f0f0f]">
-                          Civil Litigation
-                        </option>
-                        <option value="corporate" className="bg-[#0f0f0f]">
-                          Corporate &amp; Commercial
-                        </option>
-                        <option value="consumer" className="bg-[#0f0f0f]">
-                          Consumer Disputes
-                        </option>
-                        <option value="labour" className="bg-[#0f0f0f]">
-                          Labour &amp; Service Matters
-                        </option>
-                        <option value="motor" className="bg-[#0f0f0f]">
-                          Motor Accident Claims
-                        </option>
-                        <option value="property" className="bg-[#0f0f0f]">
-                          Property &amp; Real Estate
-                        </option>
-                        <option value="other" className="bg-[#0f0f0f]">
-                          Other
-                        </option>
+                        <option value="" style={{ background: "#0A1228" }}>Select area of law</option>
+                        <option value="criminal"  style={{ background: "#0A1228" }}>Criminal Law</option>
+                        <option value="family"    style={{ background: "#0A1228" }}>Family Disputes</option>
+                        <option value="civil"     style={{ background: "#0A1228" }}>Civil Litigation</option>
+                        <option value="corporate" style={{ background: "#0A1228" }}>Corporate &amp; Commercial</option>
+                        <option value="consumer"  style={{ background: "#0A1228" }}>Consumer Disputes</option>
+                        <option value="labour"    style={{ background: "#0A1228" }}>Labour &amp; Service Matters</option>
+                        <option value="motor"     style={{ background: "#0A1228" }}>Motor Accident Claims</option>
+                        <option value="property"  style={{ background: "#0A1228" }}>Property &amp; Real Estate</option>
+                        <option value="other"     style={{ background: "#0A1228" }}>Other</option>
                       </select>
                     </div>
                   </div>
+
                   <div>
-                    <label className="text-xs text-gray-500 uppercase tracking-widest mb-2 block">
+                    <label className="text-[#7A94A8] text-[9px] tracking-[0.28em] uppercase mb-2 block font-light">
                       Brief Description *
                     </label>
                     <textarea
@@ -212,94 +193,95 @@ export default function Contact() {
                       className={`${inputClass} resize-none`}
                     />
                   </div>
-                  <p className="text-gray-600 text-xs">
-                    All communications are strictly confidential and protected by attorney-client
-                    privilege.
+
+                  <p className="text-[#617F98] text-[10px] font-light leading-relaxed">
+                    All communications are strictly confidential and protected by attorney-client privilege.
                   </p>
+
                   <button
                     type="submit"
-                    className="group w-full py-4 bg-[#C9A84C] text-black font-bold text-sm tracking-widest uppercase hover:bg-[#E8D5A3] transition-all duration-300 flex items-center justify-center gap-3"
+                    className="group w-full py-4 bg-[#1B3D6E] text-[#E8E2D9] font-medium text-[10.5px] tracking-[0.28em] uppercase hover:bg-[#234E87] transition-all duration-500 flex items-center justify-center gap-3"
                   >
                     Send Message
-                    <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                    <ChevronRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform duration-300" />
                   </button>
                 </form>
               )}
             </div>
           </motion.div>
 
-          {/* Contact Info */}
+          {/* Info — 2 cols */}
           <motion.div
-            initial={{ opacity: 0, x: 40 }}
+            initial={{ opacity: 0, x: 32 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.7, delay: 0.35 }}
-            className="lg:col-span-2 space-y-6"
+            transition={{ duration: 0.8, delay: 0.35 }}
+            className="lg:col-span-2 space-y-4"
           >
-            <div className="space-y-4">
-              {contactInfo.map((info, i) => {
-                const Icon = info.icon;
-                return (
-                  <motion.div
-                    key={info.label}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={isInView ? { opacity: 1, y: 0 } : {}}
-                    transition={{ delay: 0.4 + i * 0.1 }}
-                    className="bg-dark-card border border-[#2a2a2a] p-5 hover:border-[#C9A84C]/30 transition-colors duration-300"
-                  >
-                    <div className="flex items-start gap-4">
-                      <div className="w-10 h-10 flex-shrink-0 flex items-center justify-center bg-[#C9A84C]/10 border border-[#C9A84C]/20 rounded-sm">
-                        <Icon className="w-4 h-4 text-[#C9A84C]" />
-                      </div>
-                      <div>
-                        <p className="text-xs text-gray-500 uppercase tracking-widest mb-1">
-                          {info.label}
-                        </p>
-                        {info.link ? (
-                          <a
-                            href={info.link}
-                            target={info.link.startsWith("http") ? "_blank" : undefined}
-                            rel="noopener noreferrer"
-                            className="text-gray-200 text-sm whitespace-pre-line hover:text-[#C9A84C] transition-colors"
-                          >
-                            {info.value}
-                          </a>
-                        ) : (
-                          <p className="text-gray-200 text-sm whitespace-pre-line">{info.value}</p>
-                        )}
-                      </div>
+            {contactInfo.map((info, i) => {
+              const Icon = info.icon;
+              return (
+                <motion.div
+                  key={info.label}
+                  initial={{ opacity: 0, y: 18 }}
+                  animate={isInView ? { opacity: 1, y: 0 } : {}}
+                  transition={{ delay: 0.45 + i * 0.09 }}
+                  className="bg-[#0A1228] border border-[#283C50]/60 hover:border-[#435C72]/60 p-5 transition-all duration-400 group"
+                >
+                  <div className="flex items-start gap-4">
+                    <div className="w-9 h-9 flex-shrink-0 flex items-center justify-center border border-[#283C50]/70 group-hover:border-[#617F98]/40 transition-colors duration-400">
+                      <Icon className="w-3.5 h-3.5 text-[#7A94A8] group-hover:text-[#8AA4BA] transition-colors duration-400" />
                     </div>
-                  </motion.div>
-                );
-              })}
-            </div>
+                    <div>
+                      <p className="text-[#7A94A8] text-[9px] tracking-[0.28em] uppercase mb-1.5 font-light">
+                        {info.label}
+                      </p>
+                      {info.link ? (
+                        <a
+                          href={info.link}
+                          target={info.link.startsWith("http") ? "_blank" : undefined}
+                          rel="noopener noreferrer"
+                          className="text-[#7A94A8] text-sm font-light whitespace-pre-line hover:text-[#CDD8E0] transition-colors duration-300 leading-relaxed"
+                        >
+                          {info.value}
+                        </a>
+                      ) : (
+                        <p className="text-[#7A94A8] text-sm font-light whitespace-pre-line leading-relaxed">
+                          {info.value}
+                        </p>
+                      )}
+                    </div>
+                  </div>
+                </motion.div>
+              );
+            })}
 
-            {/* Map embed */}
+            {/* Map */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 18 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ delay: 0.8 }}
-              className="border border-[#2a2a2a] overflow-hidden"
+              transition={{ delay: 0.82 }}
+              className="border border-[#283C50]/60 overflow-hidden"
             >
               <iframe
-                title="Salman Lex Chambers Location — Manjeri, Malappuram"
+                title="Salman Lex Chambers Location"
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31399.45!2d76.119!3d11.12!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba645c0eb851a5f%3A0x95b85a41b7a2cfce!2sManjeri%2C%20Kerala!5e0!3m2!1sen!2sin!4v1"
                 width="100%"
-                height="200"
-                style={{ border: 0, filter: "invert(90%) hue-rotate(180deg)" }}
+                height="190"
+                style={{ border: 0, filter: "grayscale(100%) invert(90%) contrast(85%)" }}
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
               />
             </motion.div>
 
-            {/* Emergency note */}
-            <div className="border border-[#C9A84C]/20 bg-[#C9A84C]/5 p-4">
-              <p className="text-[#C9A84C] text-xs font-semibold uppercase tracking-widest mb-1">
+            {/* Urgent note */}
+            <div className="border border-[#283C50]/50 bg-[#0E1A35]/60 p-4">
+              <p className="text-[#617F98] text-[9px] font-medium uppercase tracking-[0.28em] mb-1.5">
                 Urgent Legal Matter?
               </p>
-              <p className="text-gray-400 text-xs leading-relaxed">
-                For urgent matters requiring immediate legal attention, please call us directly.
-                We are committed to providing swift response in time-critical situations.
+              <p className="text-[#617F98] text-xs font-light leading-relaxed">
+                For urgent matters requiring immediate attention, please call us directly. We are
+                committed to providing swift response in time-critical situations.
               </p>
             </div>
           </motion.div>

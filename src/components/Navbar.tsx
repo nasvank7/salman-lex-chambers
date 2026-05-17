@@ -1,14 +1,15 @@
 "use client";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Scale } from "lucide-react";
+import { Menu, X } from "lucide-react";
+import Image from "next/image";
 
 const navLinks = [
-  { href: "#about", label: "About" },
-  { href: "#partners", label: "Our Partners" },
-  { href: "#practice", label: "Practice Areas" },
-  { href: "#why-us", label: "Why Us" },
-  { href: "#contact", label: "Contact" },
+  { href: "#about",    label: "About" },
+  { href: "#partners", label: "Partners" },
+  { href: "#practice", label: "Practice" },
+  { href: "#why-us",   label: "Philosophy" },
+  { href: "#contact",  label: "Contact" },
 ];
 
 export default function Navbar() {
@@ -23,8 +24,7 @@ export default function Navbar() {
 
   const handleNavClick = (href: string) => {
     setMenuOpen(false);
-    const el = document.querySelector(href);
-    if (el) el.scrollIntoView({ behavior: "smooth" });
+    document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
@@ -32,117 +32,132 @@ export default function Navbar() {
       <motion.nav
         initial={{ y: -80, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.6, ease: "easeOut" }}
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+        transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-700 ${
           scrolled
-            ? "bg-[#080808]/95 backdrop-blur-md border-b border-[#C9A84C]/20 shadow-2xl"
+            ? "bg-[#030610]/96 backdrop-blur-2xl border-b border-[#435C72]/20 shadow-[0_8px_48px_rgba(0,0,0,0.6)]"
             : "bg-transparent"
         }`}
       >
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="flex items-center justify-between h-20">
+        <div className="max-w-7xl mx-auto px-6 lg:px-10">
+          <div className="flex items-center justify-between h-[4.5rem]">
+
             {/* Logo */}
             <a
               href="#"
               onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-              className="flex items-center gap-3 group"
+              className="flex items-center gap-3.5 group"
             >
-              <div className="w-10 h-10 rounded-full bg-[#C9A84C]/10 border border-[#C9A84C]/40 flex items-center justify-center group-hover:bg-[#C9A84C]/20 transition-all duration-300">
-                <Scale className="w-5 h-5 text-[#C9A84C]" />
+              <div className="relative w-9 h-9 flex-shrink-0">
+                <Image
+                  src="/logo.png"
+                  alt="Salman Lex Chambers"
+                  fill
+                  className="object-contain opacity-90 group-hover:opacity-100 transition-opacity duration-500"
+                />
               </div>
               <div className="hidden sm:block">
                 <p
-                  className="text-white font-semibold text-sm leading-tight"
-                  style={{ fontFamily: "var(--font-playfair-var), serif" }}
+                  className="text-[#E8E2D9] text-sm font-medium leading-tight tracking-wide"
+                  style={{ fontFamily: "var(--font-cormorant-var), serif" }}
                 >
-                  Salman Lex
+                  Salman Lex Chambers
                 </p>
-                <p className="text-[#C9A84C] text-xs tracking-widest uppercase">
-                  Chambers
+                <p className="text-[#617F98] text-[9px] tracking-[0.25em] uppercase mt-0.5">
+                  Advocates &amp; Legal Consultants
                 </p>
               </div>
             </a>
 
-            {/* Desktop Links */}
-            <div className="hidden lg:flex items-center gap-8">
+            {/* Desktop links */}
+            <div className="hidden lg:flex items-center gap-9">
               {navLinks.map((link) => (
                 <button
                   key={link.href}
                   onClick={() => handleNavClick(link.href)}
-                  className="text-gray-300 hover:text-[#C9A84C] text-sm tracking-wide transition-colors duration-300 relative group"
+                  className="relative text-[10.5px] tracking-[0.2em] uppercase text-[#7A94A8] hover:text-[#CDD8E0] transition-colors duration-500 group"
                 >
                   {link.label}
-                  <span className="absolute -bottom-1 left-0 w-0 h-px bg-[#C9A84C] group-hover:w-full transition-all duration-300" />
+                  <span className="absolute -bottom-0.5 left-0 w-0 h-px bg-[#8AA4BA]/60 group-hover:w-full transition-all duration-500" />
                 </button>
               ))}
+
               <button
                 onClick={() => handleNavClick("#contact")}
-                className="ml-4 px-6 py-2.5 bg-[#C9A84C] text-black text-sm font-semibold tracking-wide rounded-sm hover:bg-[#E8D5A3] transition-all duration-300"
+                className="ml-3 px-5 py-2 border border-[#435C72]/50 text-[#8AA4BA] text-[10.5px] tracking-[0.2em] uppercase hover:border-[#8AA4BA]/70 hover:text-[#CDD8E0] hover:bg-[#8AA4BA]/5 transition-all duration-500"
               >
-                Consult Now
+                Consult
               </button>
             </div>
 
-            {/* Mobile Menu Toggle */}
+            {/* Mobile toggle */}
             <button
               onClick={() => setMenuOpen(!menuOpen)}
-              className="lg:hidden w-10 h-10 flex items-center justify-center text-white hover:text-[#C9A84C] transition-colors"
+              className="lg:hidden text-[#7A94A8] hover:text-[#CDD8E0] transition-colors duration-300"
             >
-              {menuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              {menuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </button>
           </div>
         </div>
       </motion.nav>
 
-      {/* Mobile Menu */}
+      {/* Mobile full-screen menu */}
       <AnimatePresence>
         {menuOpen && (
           <motion.div
             initial={{ opacity: 0, x: "100%" }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: "100%" }}
-            transition={{ duration: 0.35, ease: "easeInOut" }}
-            className="fixed inset-0 z-40 bg-[#080808] flex flex-col"
+            transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
+            className="fixed inset-0 z-40 bg-[#030610] flex flex-col"
           >
-            <div className="flex items-center justify-between h-20 px-6 border-b border-[#2a2a2a]">
+            {/* Mobile header */}
+            <div className="flex items-center justify-between h-[4.5rem] px-6 border-b border-[#283C50]/60">
               <div className="flex items-center gap-3">
-                <Scale className="w-5 h-5 text-[#C9A84C]" />
+                <Image src="/logo.png" alt="Salman Lex Chambers" width={32} height={32} className="object-contain" />
                 <span
-                  className="text-white font-semibold"
-                  style={{ fontFamily: "var(--font-playfair-var), serif" }}
+                  className="text-[#E8E2D9] text-sm tracking-wide"
+                  style={{ fontFamily: "var(--font-cormorant-var), serif" }}
                 >
                   Salman Lex Chambers
                 </span>
               </div>
-              <button
-                onClick={() => setMenuOpen(false)}
-                className="text-gray-400 hover:text-white transition-colors"
-              >
-                <X className="w-6 h-6" />
+              <button onClick={() => setMenuOpen(false)} className="text-[#617F98] hover:text-[#E8E2D9] transition-colors">
+                <X className="w-5 h-5" />
               </button>
             </div>
-            <div className="flex flex-col gap-2 p-8 flex-1 justify-center">
+
+            {/* Mobile links */}
+            <div className="flex flex-col flex-1 justify-center px-8 space-y-0">
               {navLinks.map((link, i) => (
                 <motion.button
                   key={link.href}
-                  initial={{ opacity: 0, x: 40 }}
+                  initial={{ opacity: 0, x: 32 }}
                   animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: i * 0.07 }}
+                  transition={{ delay: i * 0.07, duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
                   onClick={() => handleNavClick(link.href)}
-                  className="text-left text-2xl font-medium text-gray-200 hover:text-[#C9A84C] transition-colors py-4 border-b border-[#1a1a1a]"
-                  style={{ fontFamily: "var(--font-playfair-var), serif" }}
+                  className="flex items-center justify-between py-5 border-b border-[#283C50]/50 group"
                 >
-                  {link.label}
+                  <span
+                    className="text-[2.2rem] font-light italic text-[#E8E2D9] group-hover:text-[#8AA4BA] transition-colors duration-400 leading-none"
+                    style={{ fontFamily: "var(--font-cormorant-var), serif" }}
+                  >
+                    {link.label}
+                  </span>
+                  <span className="text-[#283C50] text-xs tracking-widest group-hover:text-[#617F98] transition-colors">
+                    0{i + 1}
+                  </span>
                 </motion.button>
               ))}
+
               <motion.button
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.4 }}
+                transition={{ delay: 0.4, duration: 0.5 }}
                 onClick={() => handleNavClick("#contact")}
-                className="mt-8 w-full py-4 bg-[#C9A84C] text-black font-semibold text-lg rounded-sm"
+                className="mt-9 w-full py-4 border border-[#435C72]/50 text-[#8AA4BA] text-[11px] tracking-[0.25em] uppercase hover:border-[#8AA4BA]/60 hover:text-[#CDD8E0] transition-all duration-400"
               >
-                Consult Now
+                Book a Consultation
               </motion.button>
             </div>
           </motion.div>

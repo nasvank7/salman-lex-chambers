@@ -1,16 +1,42 @@
 @import "tailwindcss";
 
-@theme {
-  --color-gold: #C9A84C;
-  --color-gold-light: #E8D5A3;
-  --color-gold-dark: #9A7A2E;
-  --color-gold-muted: #7A6030;
-  --color-dark: #080808;
-  --color-dark-secondary: #111111;
-  --color-dark-card: #151515;
-  --color-dark-border: #2a2a2a;
+/* Zynzal Bold — drop Zynzal-Bold.woff2 (and optionally .woff / .ttf) into /public/fonts/ */
+@font-face {
+  font-family: "Zynzal";
+  src: url("/fonts/Zynzal-Bold.woff2") format("woff2"),
+       url("/fonts/Zynzal-Bold.woff")  format("woff"),
+       url("/fonts/Zynzal-Bold.ttf")   format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
 
-  --font-playfair: "Playfair Display", Georgia, serif;
+@theme {
+  /* Darkness scale */
+  --color-void: #030610;
+  --color-abyss: #060C1A;
+  --color-deep: #0A1228;
+  --color-surface: #0E1A35;
+  --color-panel: #132042;
+
+  /* Brand navy — from logo */
+  --color-brand: #1B3D6E;
+  --color-brand-light: #234E87;
+
+  /* Silver scale — from logo's architectural pillars */
+  --color-silver-muted: #283C50;
+  --color-silver-dark: #435C72;
+  --color-silver: #617F98;
+  --color-silver-mid: #8AA4BA;
+  --color-silver-light: #B2C6D4;
+  --color-platinum: #CDD8E0;
+
+  /* Text */
+  --color-text: #E8E2D9;
+  --color-text-muted: #7A94A8;
+  --color-text-ghost: #3D5263;
+
+  --font-cormorant: "Cormorant Garamond", Georgia, serif;
   --font-inter: "Inter", system-ui, sans-serif;
 }
 
@@ -19,119 +45,49 @@ html {
 }
 
 body {
-  background-color: #080808;
-  color: #ffffff;
+  background-color: var(--color-abyss);
+  color: var(--color-text);
   font-family: var(--font-inter);
+  font-weight: 300;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
 }
 
-.font-playfair {
-  font-family: var(--font-playfair);
-}
+.font-cormorant { font-family: var(--font-cormorant); }
+.font-inter { font-family: var(--font-inter); }
 
-.font-inter {
-  font-family: var(--font-inter);
-}
-
-.text-gold {
-  color: var(--color-gold);
-}
-
-.text-gold-light {
-  color: var(--color-gold-light);
-}
-
-.bg-gold {
-  background-color: var(--color-gold);
-}
-
-.bg-dark {
-  background-color: var(--color-dark);
-}
-
-.bg-dark-secondary {
-  background-color: var(--color-dark-secondary);
-}
-
-.bg-dark-card {
-  background-color: var(--color-dark-card);
-}
-
-.border-gold {
-  border-color: var(--color-gold);
-}
-
-.border-dark-border {
-  border-color: var(--color-dark-border);
-}
-
-.gradient-gold {
-  background: linear-gradient(135deg, var(--color-gold-dark), var(--color-gold), var(--color-gold-light));
-}
-
-.gradient-gold-text {
-  background: linear-gradient(135deg, var(--color-gold-dark), var(--color-gold), var(--color-gold-light));
+/* Silver gradient text — used on key display words */
+.silver-gradient {
+  background: linear-gradient(135deg, #8AA4BA 0%, #CDD8E0 45%, #A5BCC8 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-.gold-divider {
-  width: 80px;
-  height: 3px;
-  background: linear-gradient(90deg, var(--color-gold-dark), var(--color-gold));
+/* Thin silver hairline — decorative element */
+.silver-rule {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--color-silver-mid), transparent);
 }
 
+/* Section spacing */
 .section-padding {
-  padding-top: 4rem;
-  padding-bottom: 4rem;
+  padding-top: 6rem;
+  padding-bottom: 6rem;
 }
+@media (min-width: 640px)  { .section-padding { padding-top: 7rem;  padding-bottom: 7rem; } }
+@media (min-width: 768px)  { .section-padding { padding-top: 9rem;  padding-bottom: 9rem; } }
+@media (min-width: 1024px) { .section-padding { padding-top: 11rem; padding-bottom: 11rem; } }
 
-@media (min-width: 640px) {
-  .section-padding {
-    padding-top: 5rem;
-    padding-bottom: 5rem;
-  }
-}
+/* Scrollbar */
+::-webkit-scrollbar        { width: 3px; }
+::-webkit-scrollbar-track  { background: var(--color-void); }
+::-webkit-scrollbar-thumb  { background: var(--color-silver-dark); border-radius: 1px; }
 
-@media (min-width: 768px) {
-  .section-padding {
-    padding-top: 7rem;
-    padding-bottom: 7rem;
-  }
-}
-
-@media (min-width: 1024px) {
-  .section-padding {
-    padding-top: 8rem;
-    padding-bottom: 8rem;
-  }
-}
-
-::-webkit-scrollbar {
-  width: 6px;
-}
-
-::-webkit-scrollbar-track {
-  background: #111111;
-}
-
-::-webkit-scrollbar-thumb {
-  background: var(--color-gold-muted);
-  border-radius: 3px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: var(--color-gold);
-}
-
-.hero-overlay {
-  background: linear-gradient(
-    to bottom,
-    rgba(8, 8, 8, 0.7) 0%,
-    rgba(8, 8, 8, 0.5) 50%,
-    rgba(8, 8, 8, 0.9) 100%
-  );
+/* Hero overlay — very dark cinematic */
+.hero-cinematic {
+  background:
+    linear-gradient(to bottom, rgba(3,6,16,0.92) 0%, rgba(3,6,16,0.35) 45%, rgba(3,6,16,0.97) 100%),
+    linear-gradient(to right, rgba(3,6,16,0.55) 0%, transparent 60%);
 }

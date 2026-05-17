@@ -1,5 +1,6 @@
 "use client";
-import { Scale, ArrowUp } from "lucide-react";
+import { ArrowUp } from "lucide-react";
+import Image from "next/image";
 
 const practiceLinks = [
   "Criminal Law",
@@ -11,68 +12,78 @@ const practiceLinks = [
 ];
 
 const quickLinks = [
-  { label: "About the Firm", href: "#about" },
-  { label: "Our Partners", href: "#partners" },
-  { label: "Practice Areas", href: "#practice" },
-  { label: "Why Choose Us", href: "#why-us" },
-  { label: "Contact Us", href: "#contact" },
+  { label: "About the Firm",  href: "#about" },
+  { label: "Our Partners",    href: "#partners" },
+  { label: "Practice Areas",  href: "#practice" },
+  { label: "Why Choose Us",   href: "#why-us" },
+  { label: "Contact Us",      href: "#contact" },
 ];
 
 export default function Footer() {
-  const scrollTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
-  const handleNav = (href: string) => {
-    document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
-  };
+  const scrollTop  = () => window.scrollTo({ top: 0, behavior: "smooth" });
+  const handleNav  = (href: string) => document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
 
   return (
-    <footer className="bg-[#040404] border-t border-[#1a1a1a]">
-      {/* Top section */}
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10">
-          {/* Brand */}
+    <footer className="bg-[#030610] border-t border-[#1A2C40]/60">
+      <div className="max-w-7xl mx-auto px-6 lg:px-10 pt-16 pb-10">
+
+        {/* Top silver rule */}
+        <div className="h-px bg-gradient-to-r from-transparent via-[#617F98]/20 to-transparent mb-14" />
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8">
+
+          {/* Brand column */}
           <div className="sm:col-span-2 lg:col-span-2">
-            <div className="flex items-center gap-3 mb-5">
-              <div className="w-10 h-10 rounded-full bg-[#C9A84C]/10 border border-[#C9A84C]/40 flex items-center justify-center">
-                <Scale className="w-5 h-5 text-[#C9A84C]" />
-              </div>
+            <div className="flex items-center gap-3.5 mb-6">
+              <Image
+                src="/logo.png"
+                alt="Salman Lex Chambers"
+                width={38}
+                height={38}
+                className="object-contain opacity-70"
+              />
               <div>
                 <p
-                  className="text-white font-bold text-lg leading-tight"
-                  style={{ fontFamily: "var(--font-playfair-var), serif" }}
+                  className="text-[#CDD8E0] font-medium text-base leading-tight"
+                  style={{ fontFamily: "var(--font-cormorant-var), Georgia, serif" }}
                 >
                   Salman Lex Chambers
                 </p>
-                <p className="text-[#C9A84C] text-xs tracking-widest uppercase">
+                <p className="text-[#617F98] text-[9px] tracking-[0.22em] uppercase mt-0.5">
                   Advocates &amp; Consultants
                 </p>
               </div>
             </div>
-            <p className="text-gray-400 text-sm leading-relaxed mb-6 max-w-sm">
+
+            <p className="text-[#617F98] text-xs font-light leading-relaxed mb-3 max-w-xs">
               A full-service law office at Manjeri, Malappuram District, providing legal
-              assistance, litigation support, and consultancy services before courts and
-              legal authorities across Kerala.
+              assistance, litigation support, and consultancy services across Kerala.
             </p>
-            <div className="inline-flex items-center gap-2 px-4 py-2 border border-[#C9A84C]/20 bg-[#C9A84C]/5">
-              <div className="w-2 h-2 rounded-full bg-[#C9A84C] animate-pulse" />
-              <span className="text-[#C9A84C] text-xs tracking-widest uppercase">
+            <p className="text-[#617F98] text-[10px] font-light mb-7 max-w-xs leading-relaxed">
+              2nd Floor, Pallikkadan Building, Opposite Seethi Haji Bus Stand,
+              Pandikkad Road, Manjeri — 676121
+            </p>
+
+            {/* Status indicator */}
+            <div className="inline-flex items-center gap-2.5 px-4 py-2.5 border border-[#283C50]/50">
+              <div className="w-1.5 h-1.5 rounded-full bg-[#617F98] animate-pulse" />
+              <span className="text-[#617F98] text-[9px] tracking-[0.28em] uppercase font-light">
                 Accepting New Clients
               </span>
             </div>
           </div>
 
-          {/* Quick Links */}
+          {/* Quick links */}
           <div>
-            <h4
-              className="text-white text-sm font-semibold mb-5 uppercase tracking-widest"
-            >
+            <h4 className="text-[#CDD8E0] text-[9px] tracking-[0.32em] uppercase mb-6 font-normal">
               Quick Links
             </h4>
-            <ul className="space-y-3">
+            <ul className="space-y-3.5">
               {quickLinks.map((link) => (
                 <li key={link.label}>
                   <button
                     onClick={() => handleNav(link.href)}
-                    className="text-gray-400 hover:text-[#C9A84C] text-sm transition-colors duration-300 text-left"
+                    className="text-[#617F98] hover:text-[#8AA4BA] text-xs font-light transition-colors duration-400 text-left leading-relaxed"
                   >
                     {link.label}
                   </button>
@@ -81,17 +92,17 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Practice Areas */}
+          {/* Practice areas */}
           <div>
-            <h4 className="text-white text-sm font-semibold mb-5 uppercase tracking-widest">
+            <h4 className="text-[#CDD8E0] text-[9px] tracking-[0.32em] uppercase mb-6 font-normal">
               Practice Areas
             </h4>
-            <ul className="space-y-3">
+            <ul className="space-y-3.5">
               {practiceLinks.map((area) => (
                 <li key={area}>
                   <button
                     onClick={() => handleNav("#practice")}
-                    className="text-gray-400 hover:text-[#C9A84C] text-sm transition-colors duration-300 text-left"
+                    className="text-[#617F98] hover:text-[#8AA4BA] text-xs font-light transition-colors duration-400 text-left leading-relaxed"
                   >
                     {area}
                   </button>
@@ -102,33 +113,29 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Gold divider */}
-      <div className="h-px bg-gradient-to-r from-transparent via-[#C9A84C]/30 to-transparent" />
-
       {/* Bottom bar */}
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 py-5 flex flex-col sm:flex-row items-center justify-between gap-3">
-        <div className="text-center sm:text-left">
-          <p className="text-gray-600 text-xs">
-            &copy; {new Date().getFullYear()} Salman Lex Chambers. All rights reserved.
-          </p>
-          <p className="text-gray-700 text-xs mt-1 hidden sm:block">
-            Manjeri, Malappuram District, Kerala &nbsp;|&nbsp; Bar Council of Kerala
-          </p>
-          <p className="text-gray-700 text-[10px] mt-1 sm:hidden">
-            Manjeri, Kerala &nbsp;|&nbsp; Bar Council of Kerala
-          </p>
-        </div>
+      <div className="border-t border-[#1A2C40]/50">
+        <div className="max-w-7xl mx-auto px-6 lg:px-10 py-5 flex flex-col sm:flex-row items-center justify-between gap-3">
+          <div className="text-center sm:text-left">
+            <p className="text-[#617F98] text-[10px] font-light">
+              &copy; {new Date().getFullYear()} Salman Lex Chambers. All rights reserved.
+            </p>
+            <p className="text-[#617F98] text-[10px] font-light mt-0.5 hidden sm:block">
+              Manjeri, Malappuram District, Kerala &nbsp;|&nbsp; Bar Council of Kerala
+            </p>
+          </div>
 
-        <div className="flex items-center gap-4">
-          <p className="text-gray-700 text-[10px] sm:text-xs hidden sm:block">
-            This website does not constitute legal advice.
-          </p>
-          <button
-            onClick={scrollTop}
-            className="w-9 h-9 flex items-center justify-center border border-[#2a2a2a] hover:border-[#C9A84C]/50 hover:bg-[#C9A84C]/10 text-gray-500 hover:text-[#C9A84C] transition-all duration-300"
-          >
-            <ArrowUp className="w-4 h-4" />
-          </button>
+          <div className="flex items-center gap-5">
+            <p className="text-[#617F98] text-[10px] font-light hidden sm:block">
+              This website does not constitute legal advice.
+            </p>
+            <button
+              onClick={scrollTop}
+              className="w-8 h-8 flex items-center justify-center border border-[#1A2C40]/70 hover:border-[#617F98]/40 hover:bg-[#617F98]/8 text-[#617F98] hover:text-[#617F98] transition-all duration-400"
+            >
+              <ArrowUp className="w-3.5 h-3.5" />
+            </button>
+          </div>
         </div>
       </div>
     </footer>

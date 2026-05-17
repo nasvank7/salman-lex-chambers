@@ -1,7 +1,7 @@
 "use client";
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { ChevronDown } from "lucide-react";
+import { ArrowDown } from "lucide-react";
 
 export default function Hero() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -9,14 +9,14 @@ export default function Hero() {
     target: containerRef,
     offset: ["start start", "end start"],
   });
-  const bgY = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
-  const textY = useTransform(scrollYProgress, [0, 1], ["0%", "12%"]);
-  const opacity = useTransform(scrollYProgress, [0, 0.7], [1, 0]);
+  const bgY   = useTransform(scrollYProgress, [0, 1], ["0%", "22%"]);
+  const textY = useTransform(scrollYProgress, [0, 1], ["0%", "9%"]);
+  const fades = useTransform(scrollYProgress, [0, 0.55], [1, 0]);
 
   return (
     <section
       ref={containerRef}
-      className="relative h-screen min-h-[600px] overflow-hidden flex items-center justify-center"
+      className="relative h-screen min-h-[680px] overflow-hidden flex items-center justify-center"
     >
       {/* Parallax background */}
       <motion.div style={{ y: bgY }} className="absolute inset-0 scale-110">
@@ -27,109 +27,124 @@ export default function Hero() {
               "url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=1920&q=80')",
           }}
         />
-        <div className="absolute inset-0 hero-overlay" />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#080808]/80 via-transparent to-[#080808]/50" />
+        <div className="absolute inset-0 bg-[#030610]/80" />
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(to bottom, rgba(3,6,16,0.88) 0%, rgba(3,6,16,0.28) 42%, rgba(3,6,16,0.96) 100%)",
+          }}
+        />
+        <div
+          className="absolute inset-0 hidden lg:block"
+          style={{
+            background:
+              "linear-gradient(to right, rgba(3,6,16,0.5) 0%, transparent 35%, transparent 65%, rgba(3,6,16,0.5) 100%)",
+          }}
+        />
       </motion.div>
 
-      {/* Decorative side lines — desktop only */}
-      <div className="absolute left-0 top-1/2 -translate-y-1/2 w-px h-32 bg-gradient-to-b from-transparent via-[#C9A84C]/40 to-transparent hidden lg:block" />
-      <div className="absolute right-0 top-1/2 -translate-y-1/2 w-px h-32 bg-gradient-to-b from-transparent via-[#C9A84C]/40 to-transparent hidden lg:block" />
+      {/* Architectural column lines — referencing the logo pillars */}
+      <div className="absolute left-10 top-0 bottom-0 hidden xl:flex flex-col items-center pointer-events-none">
+        <div className="w-px flex-1 bg-gradient-to-b from-transparent via-[#435C72]/30 to-transparent" />
+      </div>
+      <div className="absolute right-10 top-0 bottom-0 hidden xl:flex flex-col items-center pointer-events-none">
+        <div className="w-px flex-1 bg-gradient-to-b from-transparent via-[#435C72]/30 to-transparent" />
+      </div>
 
       {/* Content */}
       <motion.div
-        style={{ y: textY, opacity }}
-        className="relative z-10 text-center px-5 sm:px-8 w-full max-w-4xl mx-auto"
+        style={{ y: textY, opacity: fades }}
+        className="relative z-10 text-center px-6 sm:px-10 w-full max-w-5xl mx-auto"
       >
         {/* Top ornament */}
         <motion.div
-          initial={{ scaleX: 0 }}
-          animate={{ scaleX: 1 }}
-          transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
-          className="flex items-center justify-center gap-3 mb-5 sm:mb-7"
+          initial={{ scaleX: 0, opacity: 0 }}
+          animate={{ scaleX: 1, opacity: 1 }}
+          transition={{ duration: 1.4, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
+          className="flex items-center justify-center gap-5 mb-10"
         >
-          <div className="h-px w-12 sm:w-20 bg-gradient-to-r from-transparent to-[#C9A84C]" />
-          <div className="w-2 h-2 rounded-full border border-[#C9A84C] rotate-45 flex-shrink-0" />
-          <div className="h-px w-12 sm:w-20 bg-gradient-to-l from-transparent to-[#C9A84C]" />
+          <div className="h-px w-20 sm:w-28 bg-gradient-to-r from-transparent to-[#617F98]/60" />
+          <div className="w-1 h-1 bg-[#617F98]/70 rotate-45 flex-shrink-0" />
+          <div className="h-px w-20 sm:w-28 bg-gradient-to-l from-transparent to-[#617F98]/60" />
         </motion.div>
 
-        {/* Eyebrow */}
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.3 }}
-          className="text-[#C9A84C] text-xs sm:text-sm tracking-[0.2em] sm:tracking-[0.3em] uppercase mb-4 sm:mb-6 font-light"
-        >
-          Advocates &amp; Legal Consultants
-        </motion.p>
-
-        {/* Main heading */}
+        {/* Main display heading — Zynzal Bold brand font */}
         <motion.h1
-          initial={{ opacity: 0, y: 40 }}
+          initial={{ opacity: 0, y: 55 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.9, delay: 0.4, ease: "easeOut" }}
-          className="text-[2.6rem] leading-[1.1] sm:text-6xl md:text-7xl lg:text-8xl font-bold text-white mb-3 sm:mb-4"
-          style={{ fontFamily: "var(--font-playfair-var), serif" }}
+          transition={{ duration: 1.2, delay: 0.35, ease: [0.22, 1, 0.36, 1] }}
+          className="leading-[0.9] tracking-wide mb-6"
+          style={{
+            fontFamily: "'Zynzal', 'Cormorant Garamond', Georgia, serif",
+            fontWeight: 700,
+            fontStyle: "normal",
+            fontSize: "clamp(3.2rem, 10vw, 8.5rem)",
+            color: "#E8E2D9",
+          }}
         >
           Salman Lex
           <br />
-          <span className="gradient-gold-text">Chambers</span>
+          <span
+            style={{
+              background:
+                "linear-gradient(135deg, #8AA4BA 0%, #CDD8E0 48%, #A5BCC8 100%)",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+              backgroundClip: "text",
+            }}
+          >
+            Chambers
+          </span>
         </motion.h1>
 
-        {/* Tagline */}
+        {/* Advocates line — moved below heading */}
         <motion.p
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 14 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-          className="text-base sm:text-lg md:text-xl text-gray-300 mt-4 sm:mt-6 mb-2 sm:mb-3 tracking-wide"
-          style={{ fontFamily: "var(--font-playfair-var), serif" }}
+          transition={{ duration: 0.9, delay: 0.7 }}
+          className="text-[#8AA4BA] text-[10px] sm:text-xs tracking-[0.45em] uppercase mb-9 font-light"
+          style={{ fontFamily: "var(--font-inter-var), system-ui, sans-serif" }}
         >
-          Excellence in Law. Integrity in Practice.
-        </motion.p>
-
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.75 }}
-          className="text-gray-400 text-xs sm:text-sm tracking-wider sm:tracking-widest uppercase"
-        >
-          Manjeri, Malappuram District&nbsp;•&nbsp;Kerala
+          Advocates &amp; Legal Consultants &nbsp;·&nbsp; Manjeri, Kerala
         </motion.p>
 
         {/* Bottom ornament */}
         <motion.div
-          initial={{ scaleX: 0 }}
-          animate={{ scaleX: 1 }}
-          transition={{ duration: 1, delay: 0.85 }}
-          className="flex items-center justify-center gap-3 my-5 sm:my-7"
+          initial={{ scaleX: 0, opacity: 0 }}
+          animate={{ scaleX: 1, opacity: 1 }}
+          transition={{ duration: 1.1, delay: 0.9 }}
+          className="flex items-center justify-center gap-4 mb-11"
         >
-          <div className="h-px w-10 sm:w-16 bg-gradient-to-r from-transparent to-[#C9A84C]/60" />
-          <div className="w-1.5 h-1.5 rounded-full bg-[#C9A84C]/60 flex-shrink-0" />
-          <div className="h-px w-10 sm:w-16 bg-gradient-to-l from-transparent to-[#C9A84C]/60" />
+          <div className="h-px w-14 sm:w-20 bg-gradient-to-r from-transparent to-[#617F98]/40" />
+          <div className="w-0.5 h-0.5 bg-[#617F98]/50 rotate-45 flex-shrink-0" />
+          <div className="h-px w-14 sm:w-20 bg-gradient-to-l from-transparent to-[#617F98]/40" />
         </motion.div>
 
-        {/* CTA Buttons */}
+        {/* CTA buttons */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 22 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.95 }}
-          className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-stretch sm:items-center"
+          transition={{ duration: 0.9, delay: 1.05 }}
+          className="flex flex-col sm:flex-row gap-4 justify-center items-stretch sm:items-center"
         >
           <button
             onClick={() =>
               document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth" })
             }
-            className="group relative overflow-hidden px-8 py-4 bg-[#C9A84C] text-black text-sm font-bold tracking-widest uppercase hover:bg-[#E8D5A3] transition-all duration-300 w-full sm:w-auto"
+            className="group relative overflow-hidden px-10 py-4 bg-[#1B3D6E] text-[#E8E2D9] text-[10.5px] tracking-[0.28em] uppercase font-medium hover:bg-[#234E87] transition-all duration-500 w-full sm:w-auto"
           >
-            <span className="relative z-10">Book a Consultation</span>
-            <div className="absolute inset-0 bg-white/10 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-500 skew-x-12" />
+            Book a Consultation
+            <div className="absolute inset-0 bg-[#CDD8E0]/8 -translate-x-full group-hover:translate-x-full transition-transform duration-700 skew-x-12" />
           </button>
+
           <button
             onClick={() =>
               document.querySelector("#practice")?.scrollIntoView({ behavior: "smooth" })
             }
-            className="px-8 py-4 border border-[#C9A84C]/50 text-[#C9A84C] text-sm font-semibold tracking-widest uppercase hover:bg-[#C9A84C]/10 hover:border-[#C9A84C] transition-all duration-300 w-full sm:w-auto"
+            className="px-10 py-4 border border-[#617F98]/40 text-[#8AA4BA] text-[10.5px] tracking-[0.28em] uppercase font-light hover:border-[#8AA4BA]/60 hover:text-[#CDD8E0] hover:bg-[#8AA4BA]/5 transition-all duration-500 w-full sm:w-auto"
           >
-            Practice Areas
+            Our Practice
           </button>
         </motion.div>
       </motion.div>
@@ -138,16 +153,16 @@ export default function Hero() {
       <motion.button
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 1.5 }}
+        transition={{ delay: 1.7, duration: 0.8 }}
         onClick={() => document.querySelector("#about")?.scrollIntoView({ behavior: "smooth" })}
-        className="absolute bottom-6 sm:bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-gray-400 hover:text-[#C9A84C] transition-colors"
+        className="absolute bottom-8 sm:bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 text-[#617F98] hover:text-[#8AA4BA] transition-colors duration-400 group"
       >
-        <span className="text-[10px] sm:text-xs tracking-widest uppercase">Scroll</span>
+        <span className="text-[8px] tracking-[0.4em] uppercase">Discover</span>
         <motion.div
-          animate={{ y: [0, 8, 0] }}
-          transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+          animate={{ y: [0, 5, 0] }}
+          transition={{ duration: 2.2, repeat: Infinity, ease: "easeInOut" }}
         >
-          <ChevronDown className="w-4 h-4 sm:w-5 sm:h-5" />
+          <ArrowDown className="w-3 h-3" />
         </motion.div>
       </motion.button>
     </section>
