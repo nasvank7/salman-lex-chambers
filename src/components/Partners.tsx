@@ -168,7 +168,7 @@ export default function Partners() {
                     <div className="flex items-center gap-2.5">
                       <Award className="w-3.5 h-3.5 text-[#7A94A8] flex-shrink-0" />
                       <p className="text-[#617F98] text-xs font-light">
-                        Bar Council of Kerala &mdash; Enrollment. No. {partner.enrollmentNo}
+                        Bar Council of Kerala &mdash; Enrollment No. {partner.enrollmentNo}
                       </p>
                     </div>
                   </div>

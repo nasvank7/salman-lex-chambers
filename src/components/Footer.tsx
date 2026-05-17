@@ -82,13 +82,26 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-8 h-8 flex items-center justify-center border border-[#283C50]/60 hover:border-[#617F98]/50 text-[#617F98] hover:text-[#8AA4BA] transition-all duration-400"
-                aria-label="Instagram"
+                aria-label="Instagram – Adv. Salman Pallikkadan"
               >
                 <svg viewBox="0 0 24 24" className="w-3.5 h-3.5" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round">
-                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
-                    <circle cx="12" cy="12" r="4" />
-                    <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none" />
-                  </svg>
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                  <circle cx="12" cy="12" r="4" />
+                  <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none" />
+                </svg>
+              </a>
+              <a
+                href="https://www.instagram.com/salmanlexchambers?igsh=dHlzcHp2eXoxcXJm"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-8 h-8 flex items-center justify-center border border-[#283C50]/60 hover:border-[#617F98]/50 text-[#617F98] hover:text-[#8AA4BA] transition-all duration-400"
+                aria-label="Instagram – Salman Lex Chambers"
+              >
+                <svg viewBox="0 0 24 24" className="w-3.5 h-3.5" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round">
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                  <circle cx="12" cy="12" r="4" />
+                  <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none" />
+                </svg>
               </a>
             </div>
           </div>
