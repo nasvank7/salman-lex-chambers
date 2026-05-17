@@ -50,7 +50,7 @@ export default function Navbar() {
             >
               <div className="relative w-9 h-9 flex-shrink-0">
                 <Image
-                  src="/logo.png"
+                  src="/SALMANLEXCHAMBERS.png"
                   alt="Salman Lex Chambers"
                   fill
                   className="object-contain opacity-90 group-hover:opacity-100 transition-opacity duration-500"

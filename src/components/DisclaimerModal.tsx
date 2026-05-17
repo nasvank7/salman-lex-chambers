@@ -50,7 +50,7 @@ export default function DisclaimerModal() {
               {/* Logo */}
               <div className="flex justify-center mb-6">
                 <Image
-                  src="/logo.png"
+                  src="/SALMANLEXCHAMBERS.png"
                   alt="Salman Lex Chambers"
                   width={72}
                   height={72}

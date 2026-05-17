@@ -41,7 +41,7 @@ export default function Footer() {
           <div className="sm:col-span-2 lg:col-span-2">
             <div className="flex items-center gap-3.5 mb-6">
               <Image
-                src="/logo.png"
+                src="/SALMANLEXCHAMBERS.png"
                 alt="Salman Lex Chambers"
                 width={38}
                 height={38}
