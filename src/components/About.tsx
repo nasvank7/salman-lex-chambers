@@ -52,7 +52,7 @@ export default function About() {
               initial={{ opacity: 0, y: 24 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="space-y-4 text-[#7A94A8] text-sm leading-relaxed mb-9 font-light"
+              className="space-y-4 text-[#7A94A8] text-sm leading-relaxed mb-9 font-light text-justify hyphens-auto"
             >
               <p>
                 <span className="text-[#CDD8E0] font-normal">Salman Lex Chambers</span>,

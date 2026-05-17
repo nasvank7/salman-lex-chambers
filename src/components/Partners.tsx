@@ -111,7 +111,7 @@ export default function Partners() {
                 </div>
 
                 {/* Content */}
-                <div className="flex-1 p-6 sm:p-8 lg:p-10">
+                <div className="flex-1 p-5 sm:p-8 lg:p-10">
                   <div className="flex items-start justify-between gap-4 mb-5">
                     <div>
                       <h3
@@ -178,7 +178,7 @@ export default function Partners() {
 
                   <div className="space-y-3 mb-6">
                     {partner.description.map((para, j) => (
-                      <p key={j} className="text-[#7A94A8] text-sm leading-relaxed font-light">
+                      <p key={j} className="text-[#7A94A8] text-sm leading-relaxed font-light text-justify hyphens-auto">
                         {para}
                       </p>
                     ))}
