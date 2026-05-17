@@ -2,9 +2,11 @@
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowDown } from "lucide-react";
+import { useConsultModal } from "@/src/context/ConsultModalContext";
 
 export default function Hero() {
   const containerRef = useRef<HTMLDivElement>(null);
+  const { openModal } = useConsultModal();
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start start", "end start"],
@@ -120,9 +122,7 @@ export default function Hero() {
           className="flex flex-col sm:flex-row gap-4 justify-center items-stretch sm:items-center"
         >
           <button
-            onClick={() =>
-              document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth" })
-            }
+            onClick={openModal}
             className="group relative overflow-hidden px-10 py-4 bg-[#1B3D6E] text-[#E8E2D9] text-[10.5px] tracking-[0.28em] uppercase font-medium hover:bg-[#234E87] transition-all duration-500 w-full sm:w-auto"
           >
             Book a Consultation

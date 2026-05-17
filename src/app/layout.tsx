@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Cinzel, Cormorant_Garamond, Inter } from "next/font/google";
 import "./globals.css";
 import DisclaimerModal from "@/src/components/DisclaimerModal";
+import ConsultModal from "@/src/components/ConsultModal";
+import { ConsultModalProvider } from "@/src/context/ConsultModalContext";
 
 const SITE_URL = "https://www.salmanlexchambers.com";
 
@@ -248,8 +250,11 @@ export default function RootLayout({
         />
       </head>
       <body className="bg-[#060C1A] text-[#E8E2D9] antialiased">
-        <DisclaimerModal />
-        {children}
+        <ConsultModalProvider>
+          <DisclaimerModal />
+          <ConsultModal />
+          {children}
+        </ConsultModalProvider>
       </body>
     </html>
   );

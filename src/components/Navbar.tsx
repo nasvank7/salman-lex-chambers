@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import Image from "next/image";
+import { useConsultModal } from "@/src/context/ConsultModalContext";
 
 const navLinks = [
   { href: "#about",    label: "About" },
@@ -15,6 +16,7 @@ const navLinks = [
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const { openModal } = useConsultModal();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 60);
@@ -83,7 +85,7 @@ export default function Navbar() {
               ))}
 
               <button
-                onClick={() => handleNavClick("#contact")}
+                onClick={openModal}
                 className="ml-3 px-5 py-2 border border-[#435C72]/50 text-[#8AA4BA] text-[10.5px] tracking-[0.2em] uppercase hover:border-[#8AA4BA]/70 hover:text-[#CDD8E0] hover:bg-[#8AA4BA]/5 transition-all duration-500"
               >
                 Consult
@@ -154,7 +156,7 @@ export default function Navbar() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4, duration: 0.5 }}
-                onClick={() => handleNavClick("#contact")}
+                onClick={() => { setMenuOpen(false); openModal(); }}
                 className="mt-9 w-full py-4 border border-[#435C72]/50 text-[#8AA4BA] text-[11px] tracking-[0.25em] uppercase hover:border-[#8AA4BA]/60 hover:text-[#CDD8E0] transition-all duration-400"
               >
                 Book a Consultation

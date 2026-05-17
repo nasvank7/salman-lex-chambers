@@ -2,9 +2,11 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Phone, MessageCircle } from "lucide-react";
+import { useConsultModal } from "@/src/context/ConsultModalContext";
 
 export default function FloatingMobileCTA() {
   const [visible, setVisible] = useState(false);
+  const { openModal } = useConsultModal();
 
   useEffect(() => {
     const onScroll = () => setVisible(window.scrollY > 300);
@@ -35,7 +37,7 @@ export default function FloatingMobileCTA() {
             </a>
 
             <button
-              onClick={() => document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth" })}
+              onClick={openModal}
               className="flex-1 flex items-center justify-center gap-2.5 py-3.5 border border-[#435C72]/50 text-[#8AA4BA] text-[10px] tracking-[0.2em] uppercase font-light active:bg-[#8AA4BA]/5 transition-colors duration-300"
             >
               <MessageCircle className="w-3.5 h-3.5" />
