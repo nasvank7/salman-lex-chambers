@@ -8,7 +8,7 @@ const partners = [
   {
     name: "Adv. Salman Pallikkadan",
     role: "Founder Partner | Advocate & Legal Consultant",
-    image: "/salman.jpeg",
+    image: "/salmannew.jpeg",
     degree: "B.A. LL.B.",
     education: "H.H. The Maharaja's Government Law College, Ernakulam",
     enrollmentNo: "K/814/2020",

@@ -59,13 +59,10 @@ export default function About() {
                 Advocates &amp; Legal Consultants, is a full-service law office based at Manjeri,
                 Malappuram District, engaged in providing legal representation, litigation
                 assistance, and professional legal consultancy before courts, tribunals, and
-                statutory authorities across the State of Kerala.
+                statutory authorities across the State of Kerala. The firm is led by Adv. Salman Pallikkadan, Founder Partner, together with Adv. Aysha Latheef, Partner, both alumni of His Highness The Maharaja's Government Law College, Ernakulam and enrolled with the Bar Council of Kerala.
               </p>
               <p>
-                The firm&apos;s practice encompasses criminal law, family and matrimonial matters,
-                intellectual property advisory, civil litigation, corporate and commercial matters,
-                consumer disputes, rent control proceedings, labour and service matters, motor
-                accident claims (MACT), contract drafting, documentation, and compliance advisory.
+               The firm’s practice encompasses criminal law, family and matrimonial matters, intellectual property rights litigation &  advisory, civil litigation, corporate and commercial matters, consumer disputes, rent control proceedings, labour and service matters, motor accident claims (MACT), legal advisory services, drafting and vetting of legal documents, and professional consultancy. 
               </p>
               <p>
                 Salman Lex Chambers functions with an emphasis on professional integrity,
