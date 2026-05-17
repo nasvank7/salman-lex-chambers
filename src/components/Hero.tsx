@@ -80,23 +80,13 @@ export default function Hero() {
             fontWeight: 700,
             fontStyle: "normal",
             fontSize: "clamp(2.8rem, 9vw, 7.5rem)",
-            color: "#E8E2D9",
+            color: "white",
             letterSpacing: "0.04em",
           }}
         >
           Salman Lex
           <br />
-          <span
-            style={{
-              background:
-                "linear-gradient(135deg, #8AA4BA 0%, #CDD8E0 48%, #A5BCC8 100%)",
-              WebkitBackgroundClip: "text",
-              WebkitTextFillColor: "transparent",
-              backgroundClip: "text",
-            }}
-          >
-            Chambers
-          </span>
+          <span>Chambers</span>
         </motion.h1>
 
         {/* Advocates line — moved below heading */}
@@ -107,7 +97,7 @@ export default function Hero() {
           className="text-[#8AA4BA] text-[10px] sm:text-xs tracking-[0.45em] uppercase mb-9 font-light"
           style={{ fontFamily: "var(--font-inter-var), system-ui, sans-serif" }}
         >
-          Advocates &amp; Legal Consultants &nbsp;·&nbsp; Manjeri, Kerala
+          Advocates &amp; Legal Consultants 
         </motion.p>
 
         {/* Bottom ornament */}

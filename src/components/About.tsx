@@ -6,16 +6,16 @@ import Image from "next/image";
 
 const highlights = [
   "Led by Adv. Salman Pallikkadan (Founder Partner) and Adv. Aysha Latheef (Partner)",
-  "Both alumni of H.H. The Maharaja's Government Law College, Ernakulam",
-  "Enrolled with the Bar Council of Kerala — Advocates Act, 1961",
-  "Practice before courts, tribunals, and statutory authorities across Kerala",
-  "Operating in adherence to the rules of the Bar Council of India",
+  // "Both alumni of H.H. The Maharaja's Government Law College, Ernakulam",
+  // "Enrolled with the Bar Council of Kerala — Advocates Act, 1961",
+  // "Practice before courts, tribunals, and statutory authorities across Kerala",
+  // "Operating in adherence to the rules of the Bar Council of India",
 ];
 
 const stats = [
   { value: "11+", label: "Practice Areas" },
-  { value: "2",   label: "Expert Partners" },
-  { value: "100%", label: "Commitment" },
+  // { value: "2",   label: "Expert Partners" },
+  // { value: "100%", label: "Commitment" },
   { value: "Manjeri", label: "Based At" },
 ];
 
@@ -42,27 +42,7 @@ export default function About() {
               <p className="text-[#617F98] text-[9px] tracking-[0.42em] uppercase mb-5 font-light">
                 About the Firm
               </p>
-              <h2
-                className="font-light italic leading-[0.92] tracking-tight mb-7 text-[#E8E2D9]"
-                style={{
-                  fontFamily: "var(--font-cormorant-var), Georgia, serif",
-                  fontSize: "clamp(2.6rem, 5.5vw, 4.2rem)",
-                }}
-              >
-                A Legacy of
-                <br />
-                <span
-                  className="not-italic font-semibold"
-                  style={{
-                    background: "linear-gradient(135deg, #8AA4BA 0%, #CDD8E0 48%, #A5BCC8 100%)",
-                    WebkitBackgroundClip: "text",
-                    WebkitTextFillColor: "transparent",
-                    backgroundClip: "text",
-                  }}
-                >
-                  Legal Excellence
-                </span>
-              </h2>
+             
 
               {/* Silver hairline */}
               <div className="w-14 h-px bg-gradient-to-r from-[#8AA4BA]/70 to-transparent mb-9" />

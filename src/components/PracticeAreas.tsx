@@ -7,18 +7,18 @@ import {
 } from "lucide-react";
 
 const practices = [
-  { icon: Shield,      num: "01", title: "Criminal Law",               description: "Robust defense and prosecution representation in criminal matters before sessions and high courts." },
-  { icon: Users,       num: "02", title: "Family Disputes",            description: "Sensitive handling of matrimonial cases, maintenance, child custody, and inheritance disputes." },
-  { icon: Gavel,       num: "03", title: "Civil Litigation",           description: "Comprehensive representation in civil suits, injunctions, property matters, and appeals." },
-  { icon: Briefcase,   num: "04", title: "Corporate & Commercial",     description: "Legal support for businesses covering contracts, disputes, regulatory compliance, and commercial litigation." },
-  { icon: ShoppingBag, num: "05", title: "Consumer Disputes",          description: "Advocacy before consumer forums for product liability, deficiency in service, and unfair trade practices." },
-  { icon: Home,        num: "06", title: "Rent Control Proceedings",   description: "Expert guidance in tenancy disputes, eviction proceedings, and rent control tribunal matters." },
-  { icon: Hammer,      num: "07", title: "Labour & Service Matters",   description: "Representation in employment disputes, industrial tribunals, and service law cases." },
-  { icon: Car,         num: "08", title: "Motor Accident Claims",      description: "Efficient processing of MACT claims, insurance disputes, and compensation recovery for accident victims." },
-  { icon: BookOpen,    num: "09", title: "Legal Advisory",             description: "Strategic legal opinions and advisory services tailored to your personal, commercial, or regulatory needs." },
-  { icon: FileText,    num: "10", title: "Document Drafting & Vetting",description: "Precise drafting and review of agreements, deeds, MoUs, wills, and all legal instruments." },
-  { icon: Lightbulb,   num: "11", title: "Professional Consultancy",   description: "Expert consultation for individuals and organizations navigating complex legal landscapes in Kerala." },
-  { icon: Scale,       num: "12", title: "Property & Real Estate",     description: "Title verification, property disputes, registration matters, and real estate transaction advisory." },
+  { icon: Shield,      num: "01", title: "Criminal Law" },
+  { icon: Users,       num: "02", title: "Family Law", },
+  { icon: Gavel,       num: "03", title: "Civil Law", },
+  { icon: Briefcase,   num: "04", title: "Corporate & Commercial",},
+  { icon: ShoppingBag, num: "05", title: "Consumer Disputes",         },
+  { icon: Home,        num: "06", title: "Rent Control Proceedings",  },
+  { icon: Hammer,      num: "07", title: "Labour & Service Matters", },
+  { icon: Car,         num: "08", title: "Motor Accident Claims",   },
+  { icon: BookOpen,    num: "09", title: "Legal Advisory",             },
+  { icon: FileText,    num: "10", title: "Document Drafting & Vetting" },
+  { icon: Lightbulb,   num: "11", title: "Professional Consultancy", },
+  { icon: Scale,       num: "12", title: "Property & Real Estate",   },
 ];
 
 export default function PracticeAreas() {
@@ -106,13 +106,7 @@ export default function PracticeAreas() {
                   </h3>
                 </div>
 
-                {/* Description — shown on hover on desktop, always on mobile */}
-                <p className="text-[#617F98] text-xs leading-relaxed font-light opacity-0 group-hover:opacity-100 sm:block hidden transition-all duration-500 max-h-0 group-hover:max-h-24 overflow-hidden">
-                  {practice.description}
-                </p>
-                <p className="text-[#617F98] text-xs leading-relaxed font-light sm:hidden">
-                  {practice.description}
-                </p>
+               
               </motion.div>
             );
           })}

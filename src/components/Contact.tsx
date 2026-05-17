@@ -274,16 +274,7 @@ export default function Contact() {
               />
             </motion.div>
 
-            {/* Urgent note */}
-            <div className="border border-[#283C50]/50 bg-[#0E1A35]/60 p-4">
-              <p className="text-[#617F98] text-[9px] font-medium uppercase tracking-[0.28em] mb-1.5">
-                Urgent Legal Matter?
-              </p>
-              <p className="text-[#617F98] text-xs font-light leading-relaxed">
-                For urgent matters requiring immediate attention, please call us directly. We are
-                committed to providing swift response in time-critical situations.
-              </p>
-            </div>
+           
           </motion.div>
         </div>
       </div>

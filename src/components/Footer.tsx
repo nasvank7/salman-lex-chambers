@@ -55,7 +55,7 @@ export default function Footer() {
                   Salman Lex Chambers
                 </p>
                 <p className="text-[#617F98] text-[9px] tracking-[0.22em] uppercase mt-0.5">
-                  Advocates &amp; Consultants
+                  Advocates &amp; Legal  Consultants
                 </p>
               </div>
             </div>
@@ -72,9 +72,7 @@ export default function Footer() {
             {/* Status indicator */}
             <div className="inline-flex items-center gap-2.5 px-4 py-2.5 border border-[#283C50]/50 mb-5">
               <div className="w-1.5 h-1.5 rounded-full bg-[#617F98] animate-pulse" />
-              <span className="text-[#617F98] text-[9px] tracking-[0.28em] uppercase font-light">
-                Accepting New Clients
-              </span>
+          
             </div>
 
             {/* Social links */}

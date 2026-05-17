@@ -1,7 +1,7 @@
 "use client";
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { GraduationCap, Award, Scale, Briefcase, Building2 } from "lucide-react";
+import { GraduationCap, Award, Scale } from "lucide-react";
 import Image from "next/image";
 
 const partners = [
@@ -12,14 +12,9 @@ const partners = [
     degree: "B.A. LL.B.",
     education: "H.H. The Maharaja's Government Law College, Ernakulam",
     enrollmentNo: "K/814/2020",
-    career: [
-      "Muhammed Siyad & Associates, Ernakulam",
-      "KVS Legal Associates, Manjeri",
-      "Legal Aid Defence Counsel, NALSA (2023 – 2025)",
-    ],
-    corporate: "Legal Advisor — Popees Baby Care Pvt. Ltd.",
     description:
-      "Adv. Salman Pallikkadan is the Founder Partner of Salman Lex Chambers, enrolled with the Bar Council of Kerala in 2020. He holds a B.A. LL.B. from H.H. The Maharaja's Government Law College, Ernakulam. He began his career at Muhammed Siyad & Associates, Ernakulam, and later practised at KVS Legal Associates, Manjeri. He was subsequently selected as a Legal Aid Defence Counsel under NALSA, serving from 2023 to 2025, representing underprivileged accused in criminal trials. He established Salman Lex Chambers along with Adv. Aysha Latheef and serves as Legal Advisor to Popees Baby Care Private Limited.",
+      "Adv. Salman Pallikkadan is the Founder Partner of Salman Lex Chambers, Advocates & Legal Consultants, Manjeri, enrolled as an Advocate with the Bar Council of Kerala in 2020. He holds a B.A. LL.B. degree from His Highness The Maharaja's Government Law College, Ernakulam and possesses professional experience in litigation, legal advisory, drafting, and consultancy services across diverse areas of law. He began his legal career at Muhammed Siyad & Associates, Ernakulam, and later practised at KVS Legal Associates, Manjeri. He was subsequently selected as a Legal Aid Defense Counsel under the National Legal Services Authority (NALSA), serving from 2023 to 2025, representing underprivileged accused persons in criminal trials and advancing access to justice. Following his tenure, he established Salman Lex Chambers along with Adv. Aysha Latheef, Advocate and Partner of the firm. He has also served as Legal Advisor to Popees Baby Care Private Limited.",
+    profileUrl: "https://share.google/sBtUw2G6ZiM6lyVva",
     specialties: ["Criminal Law", "Civil Disputes", "Corporate & Commercial", "Family Law", "IPR Advisory & Litigation", "MACT", "Consumer Disputes"],
   },
   {
@@ -29,13 +24,9 @@ const partners = [
     degree: "B.Com LL.B.",
     education: "H.H. The Maharaja's Government Law College, Ernakulam",
     enrollmentNo: "K/1224/2022",
-    career: [
-      "KVS Legal Associates, Manjeri",
-      "Partner, Salman Lex Chambers",
-    ],
-    corporate: "Legal Support — Popees Baby Care Pvt. Ltd., Fragomen, Building Blocks Software Services Pvt. Ltd.",
     description:
-      "Adv. Aysha Latheef is a Partner at Salman Lex Chambers, enrolled with the Bar Council of Kerala in 2022. She holds a B.Com LL.B. from H.H. The Maharaja's Government Law College, Ernakulam and brings professional experience in litigation, legal advisory, drafting, and consultancy across diverse areas of practice. She commenced her career at KVS Legal Associates, Manjeri, and subsequently joined Salman Lex Chambers as Partner. Alongside court practice, she has rendered corporate legal support to Popees Baby Care Private Limited, Fragomen, and Building Blocks Software Services Private Limited.",
+      "Adv. Aysha Latheef is a Partner at Salman Lex Chambers, Advocates & Legal Consultants, Manjeri, enrolled as an Advocate with the Bar Council of Kerala in 2022. She holds a B.Com LL.B. degree from His Highness The Maharaja's Government Law College, Ernakulam and possesses professional experience in litigation, legal advisory, drafting, and consultancy across diverse areas of legal practice. She commenced her legal career at KVS Legal Associates, Manjeri, and subsequently joined Salman Lex Chambers as Partner, contributing to both litigation and corporate advisory practice. Alongside court practice, she has rendered legal support and coordination services to Popees Baby Care Private Limited, Fragomen, and Building Blocks Software Services Private Limited.",
+    profileUrl: "https://share.google/YV9kfXUHRwM2eTidb",
     specialties: ["Family Law", "Corporate & Commercial", "IPR Advisory & Litigation", "Criminal Law", "Civil Disputes", "MACT", "Consumer Disputes"],
   },
 ];
@@ -99,17 +90,17 @@ export default function Partners() {
 
               <div className="flex flex-col sm:flex-row">
                 {/* Portrait image */}
-                <div className="relative w-full sm:w-52 lg:w-64 h-56 sm:h-auto flex-shrink-0 overflow-hidden">
+                <div className="relative w-full sm:w-52 lg:w-64 flex-shrink-0 overflow-hidden">
                   <Image
                     src={partner.image}
                     alt={partner.name}
-                    fill
-                    className="object-cover object-top grayscale group-hover:grayscale-0 transition-all duration-700"
+                    width={400}
+                    height={500}
+                    className="w-full h-auto sm:absolute sm:inset-0 sm:w-full sm:h-full object-cover object-top grayscale group-hover:grayscale-0 transition-all duration-700"
                     sizes="(max-width: 640px) 100vw, 256px"
                   />
-                  {/* Portrait overlay */}
                   <div className="absolute inset-0 bg-gradient-to-r from-transparent to-[#0E1A35]/60 hidden sm:block" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0E1A35]/60 to-transparent sm:hidden" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0E1A35]/40 to-transparent sm:hidden" />
                 </div>
 
                 {/* Content */}
@@ -125,9 +116,25 @@ export default function Partners() {
                       >
                         {partner.name}
                       </h3>
-                      <p className="text-[#8AA4BA] text-[10px] tracking-[0.22em] uppercase font-light">
+                      <p className="text-[#8AA4BA] text-[10px] tracking-[0.22em] uppercase font-light mb-1">
                         {partner.role}
                       </p>
+                      {partner.profileUrl && (
+                        <a
+                          href={partner.profileUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1.5 text-[#617F98] hover:text-[#8AA4BA] text-[10px] font-light tracking-wide transition-colors duration-300"
+                        >
+                          <svg viewBox="0 0 24 24" className="w-3 h-3 flex-shrink-0" fill="currentColor">
+                            <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+                            <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+                            <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/>
+                            <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+                          </svg>
+                          View Google Profile
+                        </a>
+                      )}
                     </div>
 
                     {/* Number indicator */}
@@ -154,18 +161,8 @@ export default function Partners() {
                     <div className="flex items-center gap-2.5">
                       <Award className="w-3.5 h-3.5 text-[#7A94A8] flex-shrink-0" />
                       <p className="text-[#617F98] text-xs font-light">
-                        Bar Council of Kerala &mdash; Enrl. No. {partner.enrollmentNo}
+                        Bar Council of Kerala &mdash; Enrollment. No. {partner.enrollmentNo}
                       </p>
-                    </div>
-                    <div className="flex items-start gap-2.5">
-                      <Briefcase className="w-3.5 h-3.5 text-[#7A94A8] mt-0.5 flex-shrink-0" />
-                      <p className="text-[#617F98] text-xs font-light leading-snug">
-                        {partner.career.join(" → ")}
-                      </p>
-                    </div>
-                    <div className="flex items-start gap-2.5">
-                      <Building2 className="w-3.5 h-3.5 text-[#7A94A8] mt-0.5 flex-shrink-0" />
-                      <p className="text-[#617F98] text-xs font-light leading-snug">{partner.corporate}</p>
                     </div>
                   </div>
 
@@ -179,13 +176,13 @@ export default function Partners() {
                   {/* Specialties */}
                   <div>
                     <p className="text-[#7A94A8] text-[9px] tracking-[0.3em] uppercase mb-3">
-                      Areas of Focus
+                      Areas of Practice
                     </p>
                     <div className="flex flex-wrap gap-2">
                       {partner.specialties.map((spec) => (
                         <span
                           key={spec}
-                          className="inline-flex items-center gap-1.5 px-3 py-1.5 border border-[#283C50]/70 text-[#8AA4BA] text-[10px] tracking-wide font-light hover:border-[#617F98]/50 hover:text-[#8AA4BA] transition-all duration-300"
+                          className="inline-flex items-center gap-1.5 px-3 py-1.5 border border-[#283C50]/70 text-[#8AA4BA] text-[10px] tracking-wide font-light hover:border-[#617F98]/50 transition-all duration-300"
                         >
                           <Scale className="w-2.5 h-2.5 text-[#7A94A8]" />
                           {spec}
@@ -210,7 +207,7 @@ export default function Partners() {
           className="mt-10 px-6 py-5 border border-[#283C50]/50 bg-[#0A1228]/50"
         >
           <p className="text-[#617F98] text-xs font-light leading-relaxed text-center">
-            Both advocates are distinguished alumni of{" "}
+            Both advocates are  alumni of{" "}
             <span className="text-[#8AA4BA] font-normal">
               His Highness The Maharaja&apos;s Government Law College, Ernakulam
             </span>{" "}
