@@ -60,11 +60,11 @@ export default function Footer() {
               </div>
             </div>
 
-            <p className="text-[#617F98] text-xs font-light leading-relaxed mb-3 max-w-xs">
+            <p className="text-[#617F98] text-xs font-light leading-relaxed mb-3 max-w-xs text-justify hyphens-auto">
               A full-service law office at Manjeri, Malappuram District, providing legal
               assistance, litigation support, and consultancy services across Kerala.
             </p>
-            <p className="text-[#617F98] text-[10px] font-light mb-7 max-w-xs leading-relaxed">
+            <p className="text-[#617F98] text-[10px] font-light mb-7 max-w-xs leading-relaxed text-justify hyphens-auto">
               2nd Floor, Pallikkadan Building, Opposite Seethi Haji Bus Stand,
               Pandikkad Road, Manjeri — 676121
             </p>
