@@ -12,8 +12,12 @@ const partners = [
     degree: "B.A. LL.B.",
     education: "H.H. The Maharaja's Government Law College, Ernakulam",
     enrollmentNo: "K/814/2020",
-    description:
-      "Adv. Salman Pallikkadan is the Founder Partner of Salman Lex Chambers, Advocates & Legal Consultants, Manjeri, enrolled as an Advocate with the Bar Council of Kerala in 2020. He holds a B.A. LL.B. degree from His Highness The Maharaja's Government Law College, Ernakulam and possesses professional experience in litigation, legal advisory, drafting, and consultancy services across diverse areas of law. He began his legal career at Muhammed Siyad & Associates, Ernakulam, and later practised at KVS Legal Associates, Manjeri. He was subsequently selected as a Legal Aid Defense Counsel under the National Legal Services Authority (NALSA), serving from 2023 to 2025, representing underprivileged accused persons in criminal trials and advancing access to justice. Following his tenure, he established Salman Lex Chambers along with Adv. Aysha Latheef, Advocate and Partner of the firm. He has also served as Legal Advisor to Popees Baby Care Private Limited.His practice focuses on criminal law, civil disputes, corporate and commercial matters, family law, Intellectual property rights advisory and litigation,rent control proceedings, motor accident claims (MACT), consumer disputes, contract drafting, documentation, compliance advisory, and legal consultancy. He regularly represents clients before courts, tribunals, and statutory authorities across Kerala.",
+    description: [
+      "Adv. Salman Pallikkadan is the Founder Partner of Salman Lex Chambers, Advocates & Legal Consultants, Manjeri, enrolled as an Advocate with the Bar Council of Kerala in 2020. He holds a B.A. LL.B. degree from His Highness The Maharaja's Government Law College, Ernakulam and possesses professional experience in litigation, legal advisory, drafting, and consultancy services across diverse areas of law.",
+      "He began his legal career at Muhammed Siyad & Associates, Ernakulam, and later practised at KVS Legal Associates, Manjeri. He was subsequently selected as a Legal Aid Defense Counsel under the National Legal Services Authority (NALSA), serving from 2023 to 2025, representing underprivileged accused persons in criminal trials and advancing access to justice.",
+      "Following his tenure, he established Salman Lex Chambers along with Adv. Aysha Latheef, Advocate and Partner of the firm. He has also served as Legal Advisor to Popees Baby Care Private Limited.",
+      "His practice focuses on criminal law, civil disputes, corporate and commercial matters, family law, intellectual property rights advisory and litigation, rent control proceedings, motor accident claims (MACT), consumer disputes, contract drafting, documentation, compliance advisory, and legal consultancy. He regularly represents clients before courts, tribunals, and statutory authorities across Kerala.",
+    ],
     profileUrl: "https://share.google/sBtUw2G6ZiM6lyVva",
     specialties: ["Criminal Law", "Civil Disputes", "Corporate & Commercial", "Family Law", "IPR Advisory & Litigation", "Rent Control Proceedings", "MACT", "Consumer Disputes", "Contract Drafting & Documentation", "Compliance Advisory", "Legal Consultancy"],
   },
@@ -24,8 +28,11 @@ const partners = [
     degree: "B.Com LL.B.",
     education: "H.H. The Maharaja's Government Law College, Ernakulam",
     enrollmentNo: "K/1224/2022",
-    description:
-      "Adv. Aysha Latheef is a Partner at Salman Lex Chambers, Advocates & Legal Consultants, Manjeri, enrolled as an Advocate with the Bar Council of Kerala in 2022. She holds a B.Com LL.B. degree from His Highness The Maharaja's Government Law College, Ernakulam and possesses professional experience in litigation, legal advisory, drafting, and consultancy across diverse areas of legal practice. She commenced her legal career at KVS Legal Associates, Manjeri, and subsequently joined Salman Lex Chambers as Partner, contributing to both litigation and corporate advisory practice. Alongside court practice, she has rendered legal support and coordination services to Popees Baby Care Private Limited, Fragomen, and Building Blocks Software Services Private Limited. Her areas of practice include family law, corporate and commercial matters, intellectual property rights advisory and litigation, criminal law, civil disputes, rent control proceedings, motor accident claims (MACT), consumer disputes, contract drafting, documentation, compliance advisory, and legal consultancy services. She regularly represents clients before courts, tribunals, and statutory authorities across the State of Kerala.",
+    description: [
+      "Adv. Aysha Latheef is a Partner at Salman Lex Chambers, Advocates & Legal Consultants, Manjeri, enrolled as an Advocate with the Bar Council of Kerala in 2022. She holds a B.Com LL.B. degree from His Highness The Maharaja's Government Law College, Ernakulam and possesses professional experience in litigation, legal advisory, drafting, and consultancy across diverse areas of legal practice.",
+      "She commenced her legal career at KVS Legal Associates, Manjeri, and subsequently joined Salman Lex Chambers as Partner, contributing to both litigation and corporate advisory practice. Alongside court practice, she has rendered legal support and coordination services to Popees Baby Care Private Limited, Fragomen, and Building Blocks Software Services Private Limited.",
+      "Her areas of practice include family law, corporate and commercial matters, intellectual property rights advisory and litigation, criminal law, civil disputes, rent control proceedings, motor accident claims (MACT), consumer disputes, contract drafting, documentation, compliance advisory, and legal consultancy services. She regularly represents clients before courts, tribunals, and statutory authorities across the State of Kerala.",
+    ],
     profileUrl: "https://share.google/YV9kfXUHRwM2eTidb",
     specialties: ["Family Law", "Corporate & Commercial", "IPR Advisory & Litigation", "Criminal Law", "Civil Disputes", "Rent Control Proceedings", "MACT", "Consumer Disputes", "Contract Drafting & Documentation", "Compliance Advisory", "Legal Consultancy"],
   },
@@ -169,9 +176,13 @@ export default function Partners() {
                   {/* Silver divider */}
                   <div className="h-px bg-gradient-to-r from-[#283C50]/70 to-transparent mb-5" />
 
-                  <p className="text-[#7A94A8] text-sm leading-relaxed mb-6 font-light">
-                    {partner.description}
-                  </p>
+                  <div className="space-y-3 mb-6">
+                    {partner.description.map((para, j) => (
+                      <p key={j} className="text-[#7A94A8] text-sm leading-relaxed font-light">
+                        {para}
+                      </p>
+                    ))}
+                  </div>
 
                   {/* Specialties */}
                   <div>
