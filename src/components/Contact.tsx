@@ -161,22 +161,29 @@ export default function Contact() {
                       <label className="text-[#7A94A8] text-[9px] tracking-[0.28em] uppercase mb-2 block font-light">
                         Legal Matter
                       </label>
-                      <select
-                        value={formState.matter}
-                        onChange={(e) => setFormState({ ...formState, matter: e.target.value })}
-                        className={`${inputClass} cursor-pointer`}
-                      >
-                        <option value="" style={{ background: "#0A1228" }}>Select area of law</option>
-                        <option value="criminal"  style={{ background: "#0A1228" }}>Criminal Law</option>
-                        <option value="family"    style={{ background: "#0A1228" }}>Family Disputes</option>
-                        <option value="civil"     style={{ background: "#0A1228" }}>Civil Litigation</option>
-                        <option value="corporate" style={{ background: "#0A1228" }}>Corporate &amp; Commercial</option>
-                        <option value="consumer"  style={{ background: "#0A1228" }}>Consumer Disputes</option>
-                        <option value="labour"    style={{ background: "#0A1228" }}>Labour &amp; Service Matters</option>
-                        <option value="motor"     style={{ background: "#0A1228" }}>Motor Accident Claims</option>
-                        <option value="property"  style={{ background: "#0A1228" }}>Property &amp; Real Estate</option>
-                        <option value="other"     style={{ background: "#0A1228" }}>Other</option>
-                      </select>
+                      <div className="relative">
+                        <select
+                          value={formState.matter}
+                          onChange={(e) => setFormState({ ...formState, matter: e.target.value })}
+                          className={`${inputClass} appearance-none cursor-pointer pr-9`}
+                        >
+                          <option value="" style={{ background: "#0A1228" }}>Select area of law</option>
+                          <option value="criminal"  style={{ background: "#0A1228" }}>Criminal Law</option>
+                          <option value="family"    style={{ background: "#0A1228" }}>Family Disputes</option>
+                          <option value="civil"     style={{ background: "#0A1228" }}>Civil Litigation</option>
+                          <option value="corporate" style={{ background: "#0A1228" }}>Corporate &amp; Commercial</option>
+                          <option value="consumer"  style={{ background: "#0A1228" }}>Consumer Disputes</option>
+                          <option value="labour"    style={{ background: "#0A1228" }}>Labour &amp; Service Matters</option>
+                          <option value="motor"     style={{ background: "#0A1228" }}>Motor Accident Claims</option>
+                          <option value="property"  style={{ background: "#0A1228" }}>Property &amp; Real Estate</option>
+                          <option value="other"     style={{ background: "#0A1228" }}>Other</option>
+                        </select>
+                        <div className="pointer-events-none absolute inset-y-0 right-3 flex items-center">
+                          <svg className="w-3.5 h-3.5 text-[#617F98]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}>
+                            <path d="M6 9l6 6 6-6" strokeLinecap="round" strokeLinejoin="round" />
+                          </svg>
+                        </div>
+                      </div>
                     </div>
                   </div>
 
