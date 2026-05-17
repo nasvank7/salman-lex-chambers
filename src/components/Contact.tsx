@@ -12,7 +12,7 @@ const contactInfo = [
   },
   { icon: Phone, label: "Phone / WhatsApp", value: "+91 7306647233",               link: "tel:+917306647233" },
   { icon: Mail,  label: "Email",            value: "salmanlexchambers@gmail.com",   link: "mailto:salmanlexchambers@gmail.com" },
-  { icon: Clock, label: "Office Hours",     value: "Monday – Saturday\n9:00 AM – 6:00 PM", link: null },
+  { icon: Clock, label: "Office Hours",     value: "Monday – Saturday\n9:00 AM – 10:00 PM", link: null },
 ];
 
 export default function Contact() {
