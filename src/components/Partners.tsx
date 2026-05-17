@@ -15,7 +15,7 @@ const partners = [
     description:
       "Adv. Salman Pallikkadan is the Founder Partner of Salman Lex Chambers, Advocates & Legal Consultants, Manjeri, enrolled as an Advocate with the Bar Council of Kerala in 2020. He holds a B.A. LL.B. degree from His Highness The Maharaja's Government Law College, Ernakulam and possesses professional experience in litigation, legal advisory, drafting, and consultancy services across diverse areas of law. He began his legal career at Muhammed Siyad & Associates, Ernakulam, and later practised at KVS Legal Associates, Manjeri. He was subsequently selected as a Legal Aid Defense Counsel under the National Legal Services Authority (NALSA), serving from 2023 to 2025, representing underprivileged accused persons in criminal trials and advancing access to justice. Following his tenure, he established Salman Lex Chambers along with Adv. Aysha Latheef, Advocate and Partner of the firm. He has also served as Legal Advisor to Popees Baby Care Private Limited.",
     profileUrl: "https://share.google/sBtUw2G6ZiM6lyVva",
-    specialties: ["Criminal Law", "Civil Disputes", "Corporate & Commercial", "Family Law", "IPR Advisory & Litigation", "MACT", "Consumer Disputes"],
+    specialties: ["Criminal Law", "Civil Law", "Corporate & Commercial", "Family Law", "IPR Advisory & Litigation", "MACT", "Consumer Disputes"],
   },
   {
     name: "Adv. Aysha Latheef",
@@ -27,7 +27,7 @@ const partners = [
     description:
       "Adv. Aysha Latheef is a Partner at Salman Lex Chambers, Advocates & Legal Consultants, Manjeri, enrolled as an Advocate with the Bar Council of Kerala in 2022. She holds a B.Com LL.B. degree from His Highness The Maharaja's Government Law College, Ernakulam and possesses professional experience in litigation, legal advisory, drafting, and consultancy across diverse areas of legal practice. She commenced her legal career at KVS Legal Associates, Manjeri, and subsequently joined Salman Lex Chambers as Partner, contributing to both litigation and corporate advisory practice. Alongside court practice, she has rendered legal support and coordination services to Popees Baby Care Private Limited, Fragomen, and Building Blocks Software Services Private Limited.",
     profileUrl: "https://share.google/YV9kfXUHRwM2eTidb",
-    specialties: ["Family Law", "Corporate & Commercial", "IPR Advisory & Litigation", "Criminal Law", "Civil Disputes", "MACT", "Consumer Disputes"],
+    specialties: ["Family Law", "Corporate & Commercial", "IPR Advisory & Litigation", "Criminal Law", "Civil Law", "MACT", "Consumer Disputes"],
   },
 ];
 

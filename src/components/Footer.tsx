@@ -4,8 +4,8 @@ import Image from "next/image";
 
 const practiceLinks = [
   "Criminal Law",
-  "Family Disputes",
-  "Civil Litigation",
+  "Family Law",
+  "Civil Law",
   "Corporate & Commercial",
   "Consumer Disputes",
   "Motor Accident Claims",
