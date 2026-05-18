@@ -32,11 +32,11 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Adv. Salman Pallikkadan & Adv. Aysha Latheef | Salman Lex Chambers – Best Advocates in Manjeri & Malappuram",
+    default: "Adv. Salman Pallikkadan & Adv. Aysha Latheef | Salman Lex Chambers – Best Advocates in Manjeri, Malappuram, Tirur & Perinthalmanna",
     template: "%s | Salman Lex Chambers",
   },
   description:
-    "Looking for the best advocate in Manjeri or Malappuram? Salman Lex Chambers — led by Adv. Salman Pallikkadan and Adv. Aysha Latheef — is a top-rated law firm in Manjeri, Malappuram, Kerala. Expert lawyers for criminal law, civil litigation, family disputes, corporate law, IPR, and MACT. Enrolled with the Bar Council of Kerala.",
+    "Looking for the best advocate in Manjeri, Malappuram, Tirur, or Perinthalmanna? Salman Lex Chambers — led by Adv. Salman Pallikkadan and Adv. Aysha Latheef — is a top-rated law firm serving clients across Manjeri, Malappuram, Tirur, Perinthalmanna, and throughout Kerala. Expert lawyers for criminal law, civil litigation, family disputes, corporate law, IPR, and MACT. Enrolled with the Bar Council of Kerala.",
   keywords: [
     // Name-based
     "Salman Pallikkadan",
@@ -77,6 +77,30 @@ export const metadata: Metadata = {
     "lawyer Malappuram",
     "leading advocate Malappuram",
     "experienced advocate Malappuram",
+    // Best advocate / lawyer — Tirur
+    "advocate Tirur",
+    "lawyer Tirur",
+    "best advocate in Tirur",
+    "best lawyer in Tirur",
+    "top advocate Tirur",
+    "top lawyer Tirur",
+    "leading advocate Tirur",
+    "experienced advocate Tirur",
+    "criminal lawyer Tirur",
+    "family lawyer Tirur",
+    "civil lawyer Tirur",
+    // Best advocate / lawyer — Perinthalmanna
+    "advocate Perinthalmanna",
+    "lawyer Perinthalmanna",
+    "best advocate in Perinthalmanna",
+    "best lawyer in Perinthalmanna",
+    "top advocate Perinthalmanna",
+    "top lawyer Perinthalmanna",
+    "leading advocate Perinthalmanna",
+    "experienced advocate Perinthalmanna",
+    "criminal lawyer Perinthalmanna",
+    "family lawyer Perinthalmanna",
+    "civil lawyer Perinthalmanna",
     // Best advocate / lawyer — Kerala
     "best advocate Kerala",
     "best lawyer Kerala",
@@ -120,9 +144,9 @@ export const metadata: Metadata = {
     canonical: SITE_URL,
   },
   openGraph: {
-    title: "Adv. Salman Pallikkadan & Adv. Aysha Latheef | Salman Lex Chambers – Best Advocates in Manjeri & Malappuram",
+    title: "Adv. Salman Pallikkadan & Adv. Aysha Latheef | Salman Lex Chambers – Best Advocates in Manjeri, Malappuram, Tirur & Perinthalmanna",
     description:
-      "Adv. Salman Pallikkadan and Adv. Aysha Latheef — Partners of Salman Lex Chambers, Manjeri, Malappuram. Top advocates for criminal law, civil litigation, family disputes, corporate law, and IPR across Kerala.",
+      "Adv. Salman Pallikkadan and Adv. Aysha Latheef — Partners of Salman Lex Chambers, Manjeri, Malappuram. Top advocates for criminal law, civil litigation, family disputes, corporate law, and IPR. Serving Manjeri, Malappuram, Tirur, Perinthalmanna, and across Kerala.",
     type: "website",
     url: SITE_URL,
     siteName: "Salman Lex Chambers",
@@ -138,9 +162,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Adv. Salman Pallikkadan & Adv. Aysha Latheef | Best Advocates in Manjeri & Malappuram",
+    title: "Adv. Salman Pallikkadan & Adv. Aysha Latheef | Best Advocates in Manjeri, Malappuram, Tirur & Perinthalmanna",
     description:
-      "Top law firm in Manjeri, Malappuram led by Adv. Salman Pallikkadan & Adv. Aysha Latheef. Expert legal services across Kerala. Excellence in law. Integrity in practice.",
+      "Top law firm serving Manjeri, Malappuram, Tirur, Perinthalmanna and across Kerala. Led by Adv. Salman Pallikkadan & Adv. Aysha Latheef. Excellence in law. Integrity in practice.",
     images: ["/SALMANLEXCHAMBERS.png"],
   },
 };
@@ -170,10 +194,13 @@ const jsonLd = {
         latitude: 11.1193,
         longitude: 76.1212,
       },
-      areaServed: {
-        "@type": "State",
-        name: "Kerala",
-      },
+      areaServed: [
+        { "@type": "City", name: "Manjeri" },
+        { "@type": "City", name: "Malappuram" },
+        { "@type": "City", name: "Tirur" },
+        { "@type": "City", name: "Perinthalmanna" },
+        { "@type": "State", name: "Kerala" },
+      ],
       serviceType: [
         "Criminal Law",
         "Civil Litigation",
@@ -364,6 +391,38 @@ const jsonLd = {
           acceptedAnswer: {
             "@type": "Answer",
             text: "Adv. Salman Pallikkadan (also spelled Salman Pallikadan) is the Founder Partner of Salman Lex Chambers, a leading law firm in Manjeri, Malappuram, Kerala. He is an alumnus of H.H. The Maharaja's Government Law College, Ernakulam and is enrolled with the Bar Council of Kerala.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Who is the best advocate in Tirur?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Salman Lex Chambers, led by Adv. Salman Pallikkadan and Adv. Aysha Latheef, provides legal services to clients from Tirur and the surrounding areas of Malappuram District, Kerala. The firm handles criminal law, civil litigation, family law, corporate law, IPR, and motor accident claims (MACT).",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Who is the best lawyer in Tirur?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Adv. Salman Pallikkadan and Adv. Aysha Latheef of Salman Lex Chambers are experienced advocates serving clients from Tirur, Malappuram, Manjeri, and across Kerala. Both are enrolled with the Bar Council of Kerala.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Who is the best advocate in Perinthalmanna?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Salman Lex Chambers, led by Adv. Salman Pallikkadan and Adv. Aysha Latheef, provides legal representation and consultancy to clients from Perinthalmanna and the wider Malappuram District, Kerala. The firm covers criminal law, civil litigation, family law, corporate and commercial matters, IPR, and MACT.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Who is the best lawyer in Perinthalmanna?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Adv. Salman Pallikkadan and Adv. Aysha Latheef of Salman Lex Chambers are among the top advocates serving clients from Perinthalmanna, Malappuram, Tirur, Manjeri, and across Kerala. Both are alumni of H.H. The Maharaja's Government Law College and enrolled with the Bar Council of Kerala.",
           },
         },
       ],
