@@ -32,33 +32,78 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Adv. Salman Pallikkadan | Salman Lex Chambers – Advocates & Legal Consultants, Manjeri",
+    default: "Adv. Salman Pallikkadan & Adv. Aysha Latheef | Salman Lex Chambers – Best Advocates in Manjeri & Malappuram",
     template: "%s | Salman Lex Chambers",
   },
   description:
-    "Adv. Salman Pallikkadan (Salman Pallikadan), Founder Partner of Salman Lex Chambers — a full-service law office at Manjeri, Malappuram, Kerala. Expert in criminal law, civil litigation, family disputes, corporate law, IPR, and MACT. Enrolled with the Bar Council of Kerala.",
+    "Looking for the best advocate in Manjeri or Malappuram? Salman Lex Chambers — led by Adv. Salman Pallikkadan and Adv. Aysha Latheef — is a top-rated law firm in Manjeri, Malappuram, Kerala. Expert lawyers for criminal law, civil litigation, family disputes, corporate law, IPR, and MACT. Enrolled with the Bar Council of Kerala.",
   keywords: [
+    // Name-based
     "Salman Pallikkadan",
     "Salman Pallikadan",
     "Adv Salman Pallikkadan",
     "Adv Salman Pallikadan",
     "advocate Salman Pallikkadan",
     "lawyer Salman Pallikadan",
+    "Aysha Latheef",
+    "Aysha Latheef advocate",
+    "Adv Aysha Latheef",
+    "Adv. Aysha Latheef",
+    "advocate Aysha Latheef",
+    "lawyer Aysha Latheef",
+    "Aysha Latheef Manjeri",
+    "Aysha Latheef Malappuram",
+    "Aysha Latheef Kerala",
+    "Aysha Latheef Salman Lex Chambers",
+    // Firm
     "Salman Lex Chambers",
+    "Salman Lex Chambers Manjeri",
+    "Salman Lex Chambers Malappuram",
+    // Best advocate / lawyer — Manjeri
+    "best advocate in Manjeri",
+    "best lawyer in Manjeri",
+    "top advocate Manjeri",
+    "top lawyer Manjeri",
     "advocate Manjeri",
+    "lawyer Manjeri",
+    "leading advocate Manjeri",
+    "experienced advocate Manjeri",
+    // Best advocate / lawyer — Malappuram
+    "best advocate in Malappuram",
+    "best lawyer in Malappuram",
+    "top advocate Malappuram",
+    "top lawyer Malappuram",
+    "advocate Malappuram",
     "lawyer Malappuram",
-    "best lawyer Malappuram",
+    "leading advocate Malappuram",
+    "experienced advocate Malappuram",
+    // Best advocate / lawyer — Kerala
+    "best advocate Kerala",
+    "best lawyer Kerala",
+    "top advocate Kerala",
     "legal services Kerala",
-    "criminal law Manjeri",
+    // Practice area + location
+    "criminal lawyer Manjeri",
+    "criminal advocate Manjeri",
+    "criminal lawyer Malappuram",
+    "family lawyer Manjeri",
     "family law Malappuram",
+    "divorce lawyer Manjeri",
+    "divorce advocate Malappuram",
     "civil litigation Kerala",
+    "civil lawyer Malappuram",
     "corporate law Malappuram",
     "IPR lawyer Kerala",
     "MACT advocate Malappuram",
+    "motor accident lawyer Manjeri",
+    "consumer dispute advocate Malappuram",
+    "labour law advocate Kerala",
+    // Credibility
     "Bar Council Kerala",
-    "Aysha Latheef advocate",
+    "enrolled advocate Kerala",
+    "Maharaja Law College advocate",
   ],
-  authors: [{ name: "Adv. Salman Pallikkadan" }],
+  authors: [{ name: "Adv. Salman Pallikkadan" }, { name: "Adv. Aysha Latheef" }],
   creator: "Salman Lex Chambers",
   publisher: "Salman Lex Chambers",
   robots: {
@@ -75,9 +120,9 @@ export const metadata: Metadata = {
     canonical: SITE_URL,
   },
   openGraph: {
-    title: "Adv. Salman Pallikkadan | Salman Lex Chambers – Advocates, Manjeri",
+    title: "Adv. Salman Pallikkadan & Adv. Aysha Latheef | Salman Lex Chambers – Best Advocates in Manjeri & Malappuram",
     description:
-      "Adv. Salman Pallikkadan — Founder Partner of Salman Lex Chambers, Manjeri, Malappuram. Expert legal services in criminal law, civil litigation, family disputes, corporate law, and IPR across Kerala.",
+      "Adv. Salman Pallikkadan and Adv. Aysha Latheef — Partners of Salman Lex Chambers, Manjeri, Malappuram. Top advocates for criminal law, civil litigation, family disputes, corporate law, and IPR across Kerala.",
     type: "website",
     url: SITE_URL,
     siteName: "Salman Lex Chambers",
@@ -87,15 +132,15 @@ export const metadata: Metadata = {
         url: "/SALMANLEXCHAMBERS.png",
         width: 1200,
         height: 630,
-        alt: "Salman Lex Chambers – Adv. Salman Pallikkadan, Manjeri",
+        alt: "Best Advocates in Manjeri & Malappuram – Salman Lex Chambers",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Adv. Salman Pallikkadan | Salman Lex Chambers, Manjeri",
+    title: "Adv. Salman Pallikkadan & Adv. Aysha Latheef | Best Advocates in Manjeri & Malappuram",
     description:
-      "Full-service law office at Manjeri, Malappuram led by Adv. Salman Pallikkadan. Excellence in law. Integrity in practice.",
+      "Top law firm in Manjeri, Malappuram led by Adv. Salman Pallikkadan & Adv. Aysha Latheef. Expert legal services across Kerala. Excellence in law. Integrity in practice.",
     images: ["/SALMANLEXCHAMBERS.png"],
   },
 };
@@ -176,8 +221,9 @@ const jsonLd = {
         },
         {
           "@type": "Person",
+          "@id": `${SITE_URL}/#aysha-latheef`,
           name: "Aysha Latheef",
-          alternateName: "Adv. Aysha Latheef",
+          alternateName: ["Adv. Aysha Latheef", "Adv Aysha Latheef", "advocate Aysha Latheef"],
           jobTitle: "Advocate & Partner",
           worksFor: { "@id": `${SITE_URL}/#organization` },
           alumniOf: {
@@ -217,11 +263,47 @@ const jsonLd = {
       },
     },
     {
+      "@type": "Person",
+      "@id": `${SITE_URL}/#aysha-latheef`,
+      name: "Aysha Latheef",
+      alternateName: ["Adv. Aysha Latheef", "Adv Aysha Latheef", "advocate Aysha Latheef"],
+      jobTitle: "Advocate & Partner",
+      description:
+        "Adv. Aysha Latheef is a Partner at Salman Lex Chambers, a law firm based in Manjeri, Malappuram, Kerala. She is enrolled with the Bar Council of Kerala and practises criminal law, civil litigation, family law, corporate law, and related legal matters.",
+      url: SITE_URL,
+      worksFor: {
+        "@type": "LegalService",
+        name: "Salman Lex Chambers",
+        address: {
+          "@type": "PostalAddress",
+          addressLocality: "Manjeri",
+          addressRegion: "Malappuram, Kerala",
+          addressCountry: "IN",
+        },
+      },
+      alumniOf: {
+        "@type": "CollegeOrUniversity",
+        name: "H.H. The Maharaja's Government Law College, Ernakulam",
+      },
+      memberOf: {
+        "@type": "Organization",
+        name: "Bar Council of Kerala",
+      },
+      knowsAbout: [
+        "Criminal Law",
+        "Civil Litigation",
+        "Family Law",
+        "Corporate Law",
+        "Intellectual Property Rights",
+        "Kerala High Court practice",
+      ],
+    },
+    {
       "@type": "WebSite",
       "@id": `${SITE_URL}/#website`,
       url: SITE_URL,
       name: "Salman Lex Chambers",
-      description: "Official website of Salman Lex Chambers – Adv. Salman Pallikkadan, Manjeri",
+      description: "Official website of Salman Lex Chambers – Best Advocates in Manjeri & Malappuram",
       publisher: { "@id": `${SITE_URL}/#organization` },
       potentialAction: {
         "@type": "SearchAction",
@@ -231,6 +313,60 @@ const jsonLd = {
         },
         "query-input": "required name=search_term_string",
       },
+    },
+    {
+      "@type": "FAQPage",
+      "@id": `${SITE_URL}/#faq`,
+      mainEntity: [
+        {
+          "@type": "Question",
+          name: "Who is the best advocate in Manjeri?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Adv. Salman Pallikkadan and Adv. Aysha Latheef of Salman Lex Chambers are among the leading advocates in Manjeri, Malappuram, Kerala. The firm is a full-service law office providing expert legal representation in criminal law, civil litigation, family law, corporate law, IPR, and MACT. Both advocates are enrolled with the Bar Council of Kerala and are alumni of H.H. The Maharaja's Government Law College, Ernakulam.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Who is the best lawyer in Malappuram?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Salman Lex Chambers, led by Adv. Salman Pallikkadan (Founder Partner) and Adv. Aysha Latheef (Partner), is a top-rated law firm in Malappuram, Kerala. The firm practices criminal law, civil litigation, family and matrimonial matters, corporate law, intellectual property rights, motor accident claims (MACT), and consumer disputes.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Where is Salman Lex Chambers located?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Salman Lex Chambers is located in Manjeri, Malappuram District, Kerala, India. The firm is led by Adv. Salman Pallikkadan and Adv. Aysha Latheef.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "What are the practice areas of Salman Lex Chambers?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Salman Lex Chambers handles criminal law, civil litigation, family and matrimonial law, corporate and commercial law, intellectual property rights (IPR), motor accident claims (MACT), consumer disputes, labour and service matters, rent control proceedings, legal advisory, and document drafting.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Who is Adv. Aysha Latheef?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Adv. Aysha Latheef is a Partner at Salman Lex Chambers, Manjeri, Malappuram. She is an alumna of H.H. The Maharaja's Government Law College, Ernakulam and is enrolled with the Bar Council of Kerala. She practises criminal law, civil litigation, family law, corporate law, and intellectual property rights.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Who is Adv. Salman Pallikkadan?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Adv. Salman Pallikkadan (also spelled Salman Pallikadan) is the Founder Partner of Salman Lex Chambers, a leading law firm in Manjeri, Malappuram, Kerala. He is an alumnus of H.H. The Maharaja's Government Law College, Ernakulam and is enrolled with the Bar Council of Kerala.",
+          },
+        },
+      ],
     },
   ],
 };
